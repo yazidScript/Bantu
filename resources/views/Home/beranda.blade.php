@@ -37,9 +37,9 @@
              </div>
          </div>
          <div class="col-12 col-md ">
-             <h1 class="title">Waspada Virus Corona</h1>
+             <h1 class="title" style="font-size:30px;">Waspada Virus Corona</h1>
              <div class="mb-2 mb-md-4">
-                 Covid-19<br />
+                 Covid-19 / Corona<br />
                  Waspada dengan virus corona , yang sedang mengintai kita terutama di <strong>Kudus</strong> semoga kita semua terhindar dari virus tersebut,Informasi selanjutnya bisa dilihat <a href="https://www.covid19.go.id/" style="text-uppercase:inline;">DISINI</a><br />
                  <br />
                  Mari kita semua menaati peraturan / protokol kesehatan dengan melakukan 3M <br />
@@ -52,103 +52,48 @@
 </section>
 
 <div class="container mt-5 mb-5">
-
   <div class="judul-kategory">
-    <h1 class="Kategori" style="font-family: 'Roboto' sans-serif;">Kecamatan</h1>
+    <h1 class="Kategori" style="font-family: 'Roboto' sans-serif; font-size:30px;">Kecamatan</h1>
     <!-- <i class="fas fa-arrow-right me-auto"></i> -->
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="container carousel-next">
          <i class="fas fa-arrow-right" style="display:flex; margin-right:100px; "></i>
     </div>
     <div class="container carousel-prev">
           <i class="fas fa-arrow-left" style="display:flex; margin-right:100px; "></i>
     </div>
-  </div>
-
+  </div> -->
+<div class="kecamatan">
   <div class="row">
-     <div class="py-3 col-md-3">
-        <div class="card" style="border-radius:20px;">
+    @foreach($donasi as $data)
+     <div class="py-3 col-md-2">
+        <div class="card" style="border-radius:15px;">
           <div class="card-body">
-            <div style="display:flex; justify-content: center;">
-               <img class="rounded-circle" style="width:50px;height:50px; margin-bottom:3px;" src="./Logo/logo2.png" alt="image-kategory">
-            </div>
-
-            <h5 class="card-title text-center" style="margin-top: 1.5px;font-size:25px; font-family:'Roboto' sans-serif; font-weight:bold;">Card title</h5>
-            <p class="card-text" style="font-size:16px;">
-              Some quick example text to build on the card title and make up the bulk of the
-              card's content.
-            </p>
+            <h5 class="card-title text-center" style="font-weight: bold;">{{$data->kecamatan}}</h5>
           </div>
         </div>
      </div>
-     <div class="py-3 col-md-3">
-        <div class="card" style="border-radius:20px; width:269px;">
-          <div class="card-body">
-            <div style="display:flex; justify-content: center;">
-               <img class="rounded-circle" style="width:50px;height:50px; margin-bottom:3px;" src="./Logo/logo2.png" alt="image-kategory">
-            </div>
-
-            <h5 class="card-title text-center" style="margin-top: 1.5px;font-size:25px; font-family:'Roboto' sans-serif; font-weight:bold;">Card title</h5>
-            <p class="card-text" style="font-size:16px;">
-              Some quick example text to build on the card title and make up the bulk of the
-              card's content.
-            </p>
-          </div>
-        </div>
-     </div>
-     <div class="py-3 col-md-3">
-        <div class="card" style="border-radius:20px; width:269px;">
-          <div class="card-body">
-            <div style="display:flex; justify-content: center;">
-               <img class="rounded-circle" style="width:50px;height:50px; margin-bottom:3px;" src="./Logo/logo2.png" alt="image-kategory">
-            </div>
-
-            <h5 class="card-title text-center" style="margin-top: 1.5px;font-size:25px; font-family:'Roboto' sans-serif; font-weight:bold;">Card title</h5>
-            <p class="card-text" style="font-size:16px;">
-              Some quick example text to build on the card title and make up the bulk of the
-              card's content.
-            </p>
-          </div>
-        </div>
-     </div>
-     <div class="py-3 col-md-3">
-        <div class="card" style="border-radius:20px; width:269px;">
-          <div class="card-body">
-            <div style="display:flex; justify-content: center;">
-               <img class="rounded-circle" style="width:50px;height:50px; margin-bottom:3px;" src="./Logo/logo2.png" alt="image-kategory">
-            </div>
-
-            <h5 class="card-title text-center" style="margin-top: 1.5px;font-size:25px; font-family:'Roboto' sans-serif; font-weight:bold;">Card title</h5>
-            <p class="card-text" style="font-size:16px;">
-              Some quick example text to build on the card title and make up the bulk of the
-              card's content.
-            </p>
-          </div>
-        </div>
-     </div>
-  </div>
-
-
+    @endforeach
 </div>
-
+</div>
+</div>
 <div class="container mt-5 mb-5">
   <div class="donasi-judul" id="donasi">
-      <h1 style="font-family: 'Roboto', sans-serif;">Donasi</h1>
+      <h1 style="font-family: 'Roboto', sans-serif; font-size:30px;">Donasi</h1>
   </div>
   <div class="card-donasi" id="card-donasi">
     <div class="row">
-      <div style="display: flex; align-content: stretch;">
-        <div class="py-3 col-md-4">
+        @foreach($donasi as $data)
+        <div class="py-3 col-md-3">
           <div class="card" style="height: 100%;">
             <div class="donasi-img-wrapper">
-              <img src="./Banner/banner.jpg"class="card-img-top" alt="..."/>
+              <img src="../images/{{ $data->gambar }}"class="card-img-top" style="height: 100%;" alt="..."/>
             </div>
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">{{$data->judul}}</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
+                {{$data->isi}}
               </p>
               <div class="mt-auto">
                 <style media="screen">
@@ -164,51 +109,9 @@
             </div> -->
             </div>
           </div>
+        </div>
+        @endforeach
 
-        </div>
-        <div class="py-3 col-md-4">
-          <div class="card" style="height: 100%;" >
-            <div class="donasi-img-wrapper">
-              <img src="./Banner/banner1.jpg"class="card-img-top" alt="..."/>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
-              </p>
-              <div class="mt-auto">
-                <a href="/" class="text" style="color:#E40B0B;">Selengkapnya</a>
-              </div>
-              <!-- <div class="progress">
-             <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-            </div> -->
-            </div>
-          </div>
-
-        </div>
-        <div class="py-3 col-md-4">
-          <div class="card" style="height: 100%;">
-            <div class="donasi-img-wrapper">
-              <img src="./Banner/banner.jpg"class="card-img-top" alt="..."/>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
-              </p>
-              <div class="mt-auto">
-                <a href="/" class="text" style="color:#E40B0B;">Selengkapnya</a>
-              </div>
-              <!-- <div class="progress">
-             <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-            </div> -->
-            </div>
-          </div>
-
-        </div>
-        </div>
     </div>
   </div>
 

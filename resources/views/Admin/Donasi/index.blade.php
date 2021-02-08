@@ -23,6 +23,7 @@
                       <th>Id</th>
                       <th>Foto</th>
                       <th>Judul</th>
+                      <th>Kecamatan</th>
                       <th>Isi</th>
                       <th></th>
                       <th></th>
@@ -35,6 +36,7 @@
                        <td>{{$data->id}}</td>
                         <td><a data-fancybox="gallery" href="../images/{{ $data->gambar }}"><img src="../images/{{ $data->gambar }}" class="ml-4" width="60px" height="60px"></td>
                         <td>{{$data->judul}}</td>
+                        <td>{{$data->kecamatan}}</td>
                         <td>{{$data->isi}}</td>
                         <td></td>
                         <td></td>

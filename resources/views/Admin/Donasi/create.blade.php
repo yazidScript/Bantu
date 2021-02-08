@@ -18,7 +18,15 @@
                        <span style="color:red; margin-left: 240px">{{ $errors->first('judul') }}</span>
                    </div>
                    <div class="form-group row">
-                       <label for="isi" class="col-md-4 col-form-label text-md-right">Isi</label>
+                     <label for="kecamatan" class="col-md-4 text-md-right">Kecamatan</label>
+                     <select class="form-control col-md-6" id="kecamatan" name="option">
+                       @foreach($kecamatan as $item)
+                            <option value="{{$item->nama}}"> {{$item->nama}} </option>
+                           @endforeach
+                     </select>
+                   </div>
+                   <div class="form-group row">
+                       <label for="isi" class="col-md-4 col-form-label text-md-right">Isi Berita | Donasi</label>
                        <div class="col-md-6">
                        <textarea name="isi" type="text" class="form-control" id="isi" value="{{ old('isi') }}" ></textarea>
                        </div>

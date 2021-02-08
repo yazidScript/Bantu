@@ -11,11 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('Home.beranda');
-});
-
 //FRONT END
+Route::get('/','FrontController@home');
 Route::get('/donasi','FrontController@donasi');
 Route::get('/tentang','FrontController@tentang');
 
@@ -29,3 +26,5 @@ Route::get('/dashboard/donasi/create','DonasiController@create');
 Route::get('/donasi/{id}/detail','DonasiController@show');
 Route::post('/dashboard/donasi','DonasiController@store');
 Route::get('/dashboard/{id}/delete','DonasiController@destroy');
+Route::get('/dashboard/{id}/edit','DonasiController@edit');
+Route::post('/dashboard/{id}/update','DonasiController@update');

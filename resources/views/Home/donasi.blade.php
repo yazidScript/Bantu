@@ -6,6 +6,8 @@
 
   </div>
 </header>
+
+</div>
 <div class="container mt-5 mb-10">
   <div class="donasi-judul" id="donasi">
       <h1 style="font-family: 'Roboto', sans-serif;">Donasi</h1>
