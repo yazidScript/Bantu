@@ -1,3 +1,4 @@
+
 .nav-item {
   color: #000;
 }
@@ -34,6 +35,11 @@ color:  #E40B0B;
 header .banner p{
   text-align: right;
 }
+.kecamatan .card:hover{
+   cursor: pointer;
+    box-shadow: 4px 4px 4px #e8e8e8;
+    transform: scale(1.1);
+}
 .kecamatan h5{
   margin: auto;
   font-size:25px;
@@ -42,13 +48,46 @@ header .banner p{
   align-items: center;
   justify-content: center;
 }
-.kecamatan card:hover{
-  background-color: #E40B0B;
+.card-btn{
+  display:block;
+  width: 100%;
+  padding: 1.5rem;
+  text-decoration: none;
+  text-align: center;
+  color: #3363ff;
+  background-color: #d8e0fd;
+  border: none;
+  border-radius: 0.4rem;
+  transition: 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
 }
+.card-btn span{
+  margin-left: 1rem;
+  transition: 0.2s;
+}
+.card-btn:hover,
+.card-btn:active{
+  background-color: #c2cffc;
+}
+.card-btn:hover,
+.card-btn:active{
+  margin-left: 1.5rem;
+}
+.carousel-slide{
+  width: 100%;
+}
+.carousel-slide img{
+  margin: auto;
+  border-style: none;
+  object-fit: cover;
+  border-radius: 30px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 
-
-
-
+}
 /* RESPONSIVE */
 @media only screen and (max-width: 600px) {
   /* For mobile phones: */
@@ -71,8 +110,22 @@ header .banner p{
      width: 100%;
      font-size: 30px;
    }
+   .title-hero{
+     padding-top: 2rem;
+     padding-bottom: 2px;
+   }
+   .kecamatan{
+    display: block;
+   }
   #card-donasi{
-    width: 100%;
+    display: inline-block;
   }
-
+  .carousel-slide{
+    margin-top: 5rem;
+  }
+  .carousel-slide img{
+    margin-bottom: 5px;
+    height: 200px;
+    border-radius: 16px;
+  }
 }

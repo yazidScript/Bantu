@@ -28,7 +28,7 @@
                    <div class="form-group row">
                        <label for="isi" class="col-md-4 col-form-label text-md-right">Isi Berita | Donasi</label>
                        <div class="col-md-6">
-                       <textarea name="isi" type="text" class="form-control" id="isi" value="{{ old('isi') }}" ></textarea>
+                       <input name="isi" type="text" class="form-control" id="isi" value="{{ old('isi') }}" >
                        </div>
 
                        <span style="color:red; margin-left: 240px">{{ $errors->first('email') }}</span>

@@ -1,155 +1,67 @@
 @extends('layouts.master')
 @section('content')
 
-<header>
-  <div class="'banner'" style="height:100px">
-
-  </div>
-</header>
-
+<div class="container" style="margin-top:5rem;">
+<div id="carouselExampleControls" class="carousel-slide" data-ride="carousel" style="">
+ <div class="carousel-inner">
+   <div class="carousel-item active">
+     <img src="./Banner/Banner-slide.png" class="d-block w-100"  alt="...">
+   </div>
+   <div class="carousel-item">
+     <img src="./Banner/Banner-slide.png" class="d-block w-100" alt="..." >
+   </div>
+   <div class="carousel-item">
+     <img src="./Banner/Banner-slide.png" class="d-block w-100" alt="..." >
+   </div>
+ </div>
+ <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+   <span class="sr-only">Previous</span>
+ </a>
+ <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+   <span class="sr-only">Next</span>
+ </a>
 </div>
-<div class="container mt-5 mb-10">
+</div>
+<div class="container mt-5 mb-5">
   <div class="donasi-judul" id="donasi">
-      <h1 style="font-family: 'Roboto', sans-serif;">Donasi</h1>
+      <h1 style="font-family: 'Roboto', sans-serif; font-size:30px;">Donasi</h1>
   </div>
   <div class="card-donasi" id="card-donasi">
+
     <div class="row">
-      <div style="display: flex; align-content: stretch;">
+        @foreach($donasi as $data)
         <div class="py-3 col-md-4">
           <div class="card" style="height: 100%;">
             <div class="donasi-img-wrapper">
-              <img src="./Banner/banner.jpg"class="card-img-top" alt="..."/>
+              <img src="../images/{{ $data->gambar }}"class="card-img-top" style="height: 100%;" alt="..."/>
             </div>
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">{{$data->judul}}</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
+                {{$data->isi}}
               </p>
-              <div class="mt-auto">
-                <a href="/" class="text" style="color:#E40B0B;">Selengkapnya</a>
-              </div>
+              <button class="card-btn"><a href="#" style="text-decoration:none;">Selengkapnya </a><span>&rarr;</span></button>
+              <!-- <div class="mt-auto">
+                <style media="screen">
+                  a:hover{
+                    text-decoration: none;
+                    color:#E40B0B;
+                  }
+                </style>
+
+              </div> -->
               <!-- <div class="progress">
              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
             </div> -->
             </div>
-          </div>
 
-        </div>
-        <div class="py-3 col-md-4">
-          <div class="card" style="height: 100%;" >
-            <div class="donasi-img-wrapper">
-              <img src="./Banner/banner1.jpg"class="card-img-top" alt="..."/>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
-              </p>
-              <div class="mt-auto">
-                  <a href="/" class="text" style="color:#E40B0B;">Selengkapnya</a>
-              </div>
-              <!-- <div class="progress">
-             <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-            </div> -->
-            </div>
           </div>
-
         </div>
-        <div class="py-3 col-md-4">
-          <div class="card" style="height: 100%;">
-            <div class="donasi-img-wrapper">
-              <img src="./Banner/banner.jpg"class="card-img-top" alt="..."/>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
-              </p>
-              <div class="mt-auto">
-                  <a href="/" class="text" style="color:#E40B0B;">Selengkapnya</a>
-              </div>
-              <!-- <div class="progress">
-             <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-            </div> -->
-            </div>
-          </div>
-
-        </div>
-        </div>
+        @endforeach
     </div>
-
-    <div class="row ">
-      <div class="py-3 col-md-4">
-        <div class="card" style="height: 100%;">
-          <div class="donasi-img-wrapper">
-            <img src="./Banner/banner.jpg"class="card-img-top" alt="..."/>
-          </div>
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the
-              card's content.
-            </p>
-            <div class="mt-auto">
-                <a href="/" class="text" style="color:#E40B0B;">Selengkapnya</a>
-            </div>
-            <!-- <div class="progress">
-           <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-          </div> -->
-          </div>
-        </div>
-
-      </div>
-      <div class="py-3 col-md-4">
-        <div class="card" style="height: 100%;">
-          <div class="donasi-img-wrapper">
-            <img src="./Banner/banner.jpg"class="card-img-top" alt="..."/>
-          </div>
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the
-              card's content.
-            </p>
-            <div class="mt-auto">
-                <a href="/" class="text" style="color:#E40B0B;">Selengkapnya</a>
-            </div>
-            <!-- <div class="progress">
-           <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-          </div> -->
-          </div>
-        </div>
-
-      </div>
-      <div class="py-3 col-md-4">
-        <div class="card" style="height: 100%;">
-          <div class="donasi-img-wrapper">
-            <img src="./Banner/banner.jpg"class="card-img-top" alt="..."/>
-          </div>
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the
-              card's content.
-            </p>
-            <div class="mt-auto">
-                <a href="/" class="text" style="color:#E40B0B;">Selengkapnya</a>
-            </div>
-            <!-- <div class="progress">
-           <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-          </div> -->
-          </div>
-        </div>
-
-      </div>
-    </div>
-
   </div>
-
-  <!-- <a href="/" class="btn text-white" style="background-color:#3C3C55; text-transform: inherit; margin-bottom:20px;">Lebih Banyak</a> -->
-
+<a href="/donasi" class="btn text-white" style="background-color:#3C3C55; text-transform: inherit; margin-bottom:20px;">Lebih Banyak</a>
 </div>
 @stop

@@ -14,7 +14,7 @@
                       <div class="row">
                           <div class="col-12">
                               <picture class="img-tentang">
-                                  <img alt="img tentang" class="col-12" src="./asset/gambar1.png" type="image/jpeg"/>
+                                  <img alt="img tentang" class="col-12" src="./asset/gambar1.png">
                                   <!-- <h1 style="font-size:30px; display:flex; justify-content: center;">Kudus Bisa !</h1> -->
                               </picture>
                               <div class="u-lazy__placeholder-2"></div>
@@ -28,13 +28,10 @@
                           Saat ini Indonesia dalam posisi tanggap darurat bencana alam dan pandemi covid-19.<br />
                           <br />
                           Dikudus sekarang ini terjadi bencana alam banjir dan tanah longsor karna cuaca nya musim hujan.<br />
-                          <br />
                           Berita bencana untuk berdonasi masih banyak diberitakan disosial media seperti di Facebook.Masalah inilah yang membuat kami berfikir bagaimana orang melihat berita tersebut<br />
-                          <br />
                           untuk berdonasi bukan hanya diberitakan di media sosial akan tetapi ada juga di website.<br />
                           <br />
                           Akhirnya kami membuat website “KUDUS BISA” yaitu sebuah website untuk berdonasi membantu sesama yang sedang terkena musibah bencana dikota Kudus.<br />
-                          <br />
                           Kita ketik saja alamat URL nya kemudia kita masuk halaman beranda,dihalaman beranda tersebut kita bisa melihat berita sesuai dengan wilayah nya.kita juga bisa berdonasi lewat website dengan cara kita membuka berita tersebut kemudian kita bisa membaca berita tersebut dengan lengkap dan jelas setelah itu bisa berdonasi dengan mengisikan identitas yang ada di website nya dan bisa ditransfer ke rekening yang sudah disediakan kemudian setelah terkumpul nanti ada tim dari KUDUS BISA yang akan menyalurkan langsung ke tempat terjadinya bencana.<br />
                           <br />
                           Jadi,kita berdonasi tidak perlu ragu akan tertipu karna website kami resmi untuk menyalurkan bantuan bencana disekitar Kudus. <br />

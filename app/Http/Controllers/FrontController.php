@@ -11,9 +11,10 @@ class FrontController extends Controller
      $donasi = Donasi::all();
      return view("Home.beranda",compact('donasi'));
   }
-   public function donasi()
+   public function donasi(Request $request)
    {
-     return view("Home.donasi");
+    $donasi = Donasi::all();
+     return view("Home.donasi",compact('donasi'));
    }
 
    public function tentang()

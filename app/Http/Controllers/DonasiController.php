@@ -25,7 +25,7 @@ class DonasiController extends Controller
         $request->validate([
             'judul' => 'required',
             'isi'   => 'required',
-            'gambar' => 'required|mimes:jpeg,jpg,png'
+            'gambar' => 'required|dimensions:width=600,height=400|mimes:jpeg,jpg,png'
           ]);
             $filename = time() . '.' . $request->file('gambar')->getClientOriginalExtension();
             $request->file('gambar')->move('images', $filename);
