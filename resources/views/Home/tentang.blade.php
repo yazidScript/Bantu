@@ -6,7 +6,6 @@
   </div>
 </header>
 <div class="container">
-
          <section class="c-section container-fluid pt-2 pt-md-4">
           <div class="container px-2 px-md-0">
               <div class="row align-items-center">

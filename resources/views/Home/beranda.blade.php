@@ -85,19 +85,7 @@
               <p class="card-text">
                 {{$data->isi}}
               </p>
-              <button class="card-btn"><a href="#" style="text-decoration:none;">Selengkapnya </a><span>&rarr;</span></button>
-              <!-- <div class="mt-auto">
-                <style media="screen">
-                  a:hover{
-                    text-decoration: none;
-                    color:#E40B0B;
-                  }
-                </style>
-
-              </div> -->
-              <!-- <div class="progress">
-             <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-            </div> -->
+              <button class="card-btn"><a href="/donasi/{{$data->id}}/detail-donasi" style="text-decoration:none;">Selengkapnya </a><span>&rarr;</span></button>
             </div>
 
           </div>
@@ -105,7 +93,7 @@
         @endforeach
     </div>
   </div>
-<a href="/donasi" class="btn text-white" style="background-color:#3C3C55; text-transform: inherit; margin-bottom:20px;">Lebih Banyak</a>
+  <a href="/donasi" class="btn text-white" style="background-color:#3C3C55; text-transform: inherit; margin-bottom:20px;">Lebih Banyak</a>
 </div>
 
 @stop

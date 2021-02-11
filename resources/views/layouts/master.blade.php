@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/style.css">
-        <link rel="shortcut icon" href="./Logo/logo1.png">
+        <link rel="shortcut icon" href="/Logo/logo1.png">
 
         <title>KUDUS BISA - DONASI UNTUK WARGA</title>
 
@@ -30,7 +30,7 @@
       <nav class="navbar fixed-top navbar-light navbar-expand-lg text-center" style="box-shadow: none; background-color:#ffffff">
         <div class="container">
           <a class="navbar-brand" href="#">
-            <img src="./Logo/logo1.png" width="50" height="50" dclass="d-inline-block align-top"  alt="">
+            <img src="/Logo/logo1.png" width="50" height="50" dclass="d-inline-block align-top"  alt="">
            <h class="navbar-brand h1" style="color:#000; font-size: 25px; font-family: 'Roboto', sans-serif; font-weight:900px;">KUDUS BISA</h>
           </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,9 +65,9 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase mb-4" style="opacity:0.5;">Tentang</h6>
-          <img class="img-footer "src="./Logo/logo1.png" width="70" height="70" dclass="d-inline-block align-top"  alt="">
+          <img class="img-footer "src="/Logo/logo1.png" width="70" height="70" dclass="d-inline-block align-top"  alt="">
          <h1 class="navbar-brand" style="color:#fff; font-family: 'Roboto', sans-serif; font-weight:400;">Kudus Bisa</h1>
-         <p class="ml-3 " style="padding-left:50px;">Donasikan sedikit uang anda untuk warga yang terkena bencana</p>
+         <!-- <p  style="padding-left:50px;">Saling peduli sesama</p> -->
         </div>
         <!-- Grid column -->
 

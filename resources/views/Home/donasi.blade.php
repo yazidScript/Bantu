@@ -5,13 +5,10 @@
 <div id="carouselExampleControls" class="carousel-slide" data-ride="carousel" style="">
  <div class="carousel-inner">
    <div class="carousel-item active">
-     <img src="./Banner/Banner-slide.png" class="d-block w-100"  alt="...">
+     <img src="./Banner/Banner-1.png" class="d-block w-100"  alt="...">
    </div>
    <div class="carousel-item">
-     <img src="./Banner/Banner-slide.png" class="d-block w-100" alt="..." >
-   </div>
-   <div class="carousel-item">
-     <img src="./Banner/Banner-slide.png" class="d-block w-100" alt="..." >
+     <img src="./Banner/Banner-2.png" class="d-block w-100" alt="..." >
    </div>
  </div>
  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -42,7 +39,7 @@
               <p class="card-text">
                 {{$data->isi}}
               </p>
-              <button class="card-btn"><a href="#" style="text-decoration:none;">Selengkapnya </a><span>&rarr;</span></button>
+              <button class="card-btn"><a href="/donasi/{{$data->id}}/detail-donasi" style="text-decoration:none;">Selengkapnya </a><span>&rarr;</span></button>
               <!-- <div class="mt-auto">
                 <style media="screen">
                   a:hover{

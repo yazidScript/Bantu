@@ -15,6 +15,9 @@
 Route::get('/','FrontController@home');
 Route::get('/donasi','FrontController@donasi');
 Route::get('/tentang','FrontController@tentang');
+Route::get('/donasi/{id}/detail-donasi','FrontController@detail');
+Route::get('/detail/donation-check','FrontController@donation');
+Route::get('/donation-check/pembayaran','FrontController@bayar');
 
 //Admin Panel
 Route::get('/login','AuthController@index');
