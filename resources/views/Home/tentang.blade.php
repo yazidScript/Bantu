@@ -46,7 +46,7 @@
         <div class="judul-kategory" style="padding-bottom:3px;">
             <h1 style="font-family: 'Roboto', sans-serif;">Permohonan Bantuan</h1>
             <p>Permohonan Bantuan ini adalah sifatnya umum dikhususkan untuk daerah kudus bila disekitar anda (kudus) ada bencana atau musibah lainnya yang mungkin butuh donasi untuk membantu korban tersebut maka <strong>Kudus Bisa</strong> akan membantu
-            sebisa mungkin , dengan mengisi form dibawah ini.</p>
+            sebisa mungkin , dengan mengajukan permohonan melalui form dibawah ini.</p>
         </div>
 
 
@@ -74,6 +74,10 @@
               <div class="form-group">
                 <label for="inputAddress">Alamat</label>
                 <textarea class="form-control" id="alamat" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                  <label for="gambar" class="">Foto</label>
+                  <input name="gambar" type="file" class="form-control" value="" id="gambar">
               </div>
               <button type="submit" class="btn text-white" style="background-color:#E40B0B;">Kirim</button>
             </form>
