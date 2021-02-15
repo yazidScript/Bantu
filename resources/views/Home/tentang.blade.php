@@ -13,7 +13,7 @@
                       <div class="row">
                           <div class="col-12">
                               <picture class="img-tentang">
-                                  <img alt="img tentang" class="col-12" src="./asset/gambar1.png">
+                                  <img alt="img tentang" class="col-12" src="./asset/gambar2.png">
                                   <!-- <h1 style="font-size:30px; display:flex; justify-content: center;">Kudus Bisa !</h1> -->
                               </picture>
                               <div class="u-lazy__placeholder-2"></div>
@@ -66,18 +66,13 @@
                   <input type="text" class="form-control" id="nama" placeholder="">
                 </div>
               </div>
-
               <div class="form-group">
                 <label for="inputDate">Tanggal</label>
                 <input type="date" class="form-control" id="date" placeholder="">
               </div>
               <div class="form-group">
-                <label for="inputAddress">Alamat</label>
+                <label for="inputAddress">Alamat (alamat bencana)</label>
                 <textarea class="form-control" id="alamat" rows="3"></textarea>
-              </div>
-              <div class="form-group">
-                  <label for="gambar" class="">Foto</label>
-                  <input name="gambar" type="file" class="form-control" value="" id="gambar">
               </div>
               <button type="submit" class="btn text-white" style="background-color:#E40B0B;">Kirim</button>
             </form>

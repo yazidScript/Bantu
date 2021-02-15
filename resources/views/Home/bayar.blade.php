@@ -13,10 +13,10 @@
        <img src="/asset/bri.png" alt="" class="mr-2"style="width:50px; height:35px;" >
         <span>BRI ( Verifikasi Manual )</span>
       </li>
-      <li class="list-group-item">
+      <!-- <li class="list-group-item">
         <img src="/asset/bca.png" alt="bca" class="mr-2"style="width:50px; height:35px;">
          <span>BCA ( Verikasi Manual )</span>
-       </li>
+       </li> -->
        <li class="list-group-item">
          <div class="text-center">
              <a data-toggle="modal" data-target="#modal-2" class="ml-2" style="color:#E40B0B;">Syarat & Ketentuan </a>
@@ -33,10 +33,6 @@
      <img src="/asset/dana.png" alt="" class="mr-2"style="width:50px; height:35px;">
       <span>DANA ( Verifikasi Manual )</span>
     </li>
-    <li class="list-group-item">
-      <img src="/asset/linkaja.png" alt="" style="width:60px; height:35px;">
-       <span>Link Aja ( Verikasi Manual )</span>
-     </li>
      <li class="list-group-item">
        <div class="text-center">
            <a data-toggle="modal" data-target="#exampleModalLong" class="ml-2" style="color:#E40B0B;">Syarat & Ketentuan </a>
@@ -95,11 +91,15 @@
          Cara Pembayaran Dengan ATM transfer<strong> BRI</strong>
          <ul>
            <ol>
-             <!-- <li>Buka Aplikasi Dana</li>
-             <li>Klik Tombol Kirim</li>
-             <li>Selanjutnya,kirim ke nomor <strong>081215327003</strong> <br> A/N <strong>Arif Dewangga</strong></li>
-             <li>Beri Keterangan / Alias <br> <strong>" nama kamu , Donasi Kudus Bisa "</strong></li>
-             <li>Pembayaran anda Selesai</li> -->
+             <li>Masukkan kartu ATM anda ke tempat yang tersedia. Pastikan posisinya sudah tepat</li>
+             <li>Setelah itu masukkan kode PIN anda</li>
+             <li>Pilihlah menu <strong>Transaksi Lainnya.</strong></li>
+             <li>Kemudian, lanjutkan ke pilihan,<strong>Transfer</strong> <br> dan menu <strong>Ke Rek Bank Lain</strong></li>
+             <li>Masukkan no rekening ini <strong> 812201010731530 </strong>(BRI)</li>
+             <li>Lalu masukkan nominal transfer yang kamu ingin donasi , <strong>Seiklhasnya</strong></li>
+             <li>Lalu, ada pertanyaan tentang No Referensi. Bagian ini bisa dikosongkan.</li>
+             <li>Selembar struk akan keluar dari ATM. Jangan membuang struk ini karena akan menjadi bukti yang menunjukkan Anda sudah melakukan transaksi</li>
+             <li>Pembayaran donasi anda selesai</li>
            </ol>
          </ul>
       </div>

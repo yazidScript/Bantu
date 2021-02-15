@@ -38,6 +38,7 @@
                         <td>{{$data->judul}}</td>
                         <td>{{$data->kecamatan}}</td>
                         <td>{{$data->isi}}</td>
+                        <!-- <td>{{$data->created_at}}</td> -->
                         <td></td>
                         <td></td>
                       </td>

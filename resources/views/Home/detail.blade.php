@@ -43,7 +43,7 @@
               </div>
               <div class="donasi-detail">
                   <div class="donasi-detail d-flex flex-column align-items-center">
-                      <a class="mb-2 mt-3" href="/detail/donation-check">
+                      <a class="mb-2 mt-3" href="/detail/{{$donasi->id}}/donation-check">
                           <button class="btn btn-danger px-5" style="text-transform:inherit;"><span>Donasi Sekarang !</span></button>
                       </a>
                   </div>
@@ -52,9 +52,24 @@
 
       </div>
   </section>
-  <div class="last-update">
+  <div class="container">
+    <div class="last-update">
       <h1 style="font-size:30px;">Berita | Donasi Lainnya</h1>
-    
+        <div class="card-last-update mt-5 mb-5">
+          <div class="row">
+                @foreach($donasi as $data)
+            <div class="py-3 col-md-4">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/images/{{ $donasi->gambar }}" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">{{ $donasi->judul}}</p>
+              </div>
+            </div>
+           </div>
+               @endforeach
+          </div>
+        </div>
+      </div>
   </div>
 </div>
 @stop

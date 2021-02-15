@@ -25,7 +25,7 @@ class DonasiController extends Controller
         $request->validate([
             'judul' => 'required',
             'isi'   => 'required',
-            'gambar' => 'required|dimensions:width=600,height=400|mimes:jpeg,jpg,png'
+            'gambar' => 'required|mimes:jpeg,jpg,png'
           ]);
             $filename = time() . '.' . $request->file('gambar')->getClientOriginalExtension();
             $request->file('gambar')->move('images', $filename);
@@ -57,28 +57,15 @@ class DonasiController extends Controller
     public function update(Request $request, $id)
     {
       $kecamatan = Kecamatan::all();
-      $new_image = $request->new_image;
-      $old_image = $request->old_image;
-
-   if(!isset($new_image)){
-    DB::table('donasi')->where('id',$id)->update([
-         'judul' => $request->judul,
-         'kecamatan' => $request->option,
-         'isi' => $request->isi,
-         'gambar' => $old_image
-        ]);
-  }else{
-    $filename = time() . '.' .$request->file('new_image')->getClientOriginalName();
-    $request->file('new_image')->move('images', $filename);
-    DB::table('donasi')->where('id',$id)->update([
+      $filename = time() . '.' .$request->file('new_image')->getClientOriginalName();
+      DB::table('donasi')->where('id',$id)->update([
          'judul' => $request->judul,
          'kecamatan' => $request->option,
          'isi' => $request->isi,
          'gambar' => $filename
-        ]);
-  }
-  return redirect('/dashboard/donasi')->with('sukses','data berhasil di update');
-    }
+      ]);
+     return redirect('/dashboard/donasi')->with('sukses','data berhasil di update');
+}
 
     public function destroy($id)
     {

@@ -11,10 +11,7 @@
           <div class="card-body">
               {{csrf_field()}}
             <div class="form-group">
-
-                <input type="file" name="new_image" />
-                <img src=" {{url('/images/'."$donasi->gambar")}}" class="img-thumbnail" width="100" />
-                <input type="hidden" name="old_image" value="{{ $donasi->gambar }}" />
+                <input type="file" name="gambar" />
               <span style="color:red; margin-left: 240px">{{ $errors->first('gambar') }}</span>
             </div>
             <div class="form-group">

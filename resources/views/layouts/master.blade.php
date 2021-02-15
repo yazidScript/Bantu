@@ -80,7 +80,7 @@
             <a href="/">Beranda</a>
           </p>
           <p>
-            <a href="/">Berita</a>
+            <a href="/">Donasi</a>
           </p>
           <p>
             <a href="/">Tentang</a>

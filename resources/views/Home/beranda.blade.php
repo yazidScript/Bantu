@@ -55,15 +55,18 @@
   </div> -->
 <div class="kecamatan">
   <div class="row">
-    @foreach($donasi as $data)
-     <div class="py-3 col-md-2" >
-        <div class="card" style="border-radius:15px;">
-          <div class="card-body">
-            <h5 class="card-title text-center" style="font-weight: bold;"><a href="" style="text-decoration:none;">{{$data->kecamatan}}</a></h5>
-          </div>
-        </div>
-     </div>
-    @endforeach
+    <?php foreach ($kec as $e): ?>
+
+    <div class="py-3 col-md-2">
+       <div class="card" style="border-radius:15px;">
+         <div class="card-body">
+           <h5 class="card-title text-center" style="font-weight: bold;"><a href="/kecamatan/{{$e->nama}}" style="text-decoration:none;">{{$e->nama}}</a></h5>
+         </div>
+       </div>
+    </div>
+  <?php endforeach; ?>
+
+
 </div>
 </div>
 </div>

@@ -18,12 +18,14 @@
                        <span style="color:red; margin-left: 240px">{{ $errors->first('judul') }}</span>
                    </div>
                    <div class="form-group row">
-                     <label for="kecamatan" class="col-md-4 text-md-right">Kecamatan</label>
-                     <select class="form-control col-md-6" id="kecamatan" name="option">
-                       @foreach($kecamatan as $item)
-                            <option value="{{$item->nama}}"> {{$item->nama}} </option>
-                           @endforeach
-                     </select>
+                       <label for="kecamatan" class="col-md-4 col-form-label text-md-right">Kecamatan</label>
+                       <div class="col-md-8">
+                         <select class="form-control col-md-6" id="kecamatan" name="option">
+                           @foreach($kecamatan as $item)
+                                <option value="{{$item->nama}}"> {{$item->nama}} </option>
+                               @endforeach
+                         </select>
+                       </div>
                    </div>
                    <div class="form-group row">
                        <label for="isi" class="col-md-4 col-form-label text-md-right">Isi Berita | Donasi</label>
@@ -31,12 +33,12 @@
                        <input name="isi" type="text" class="form-control" id="isi" value="{{ old('isi') }}" >
                        </div>
 
-                       <span style="color:red; margin-left: 240px">{{ $errors->first('email') }}</span>
+                       <span style="color:red; margin-left: 240px">{{ $errors->first('isi') }}</span>
                    </div>
                    <div class="form-group row">
                        <label for="gambar" class="col-md-4 col-form-label text-md-right">Gambar</label>
                        <div class="col-md-6">
-                       <input name="gambar" type="file" class="form-control" value="{{ old('gambar') }}" id="gambar">
+                       <input name="gambar[]" type="file" class="form-control" value="{{ old('gambar') }}" id="gambar" multiple>
                        </div>
                        <span style="color:red; margin-left: 240px">{{ $errors->first('gambar') }}</span>
                    </div>
