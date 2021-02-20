@@ -12,22 +12,8 @@
            <div class="card-body">
                <form method="POST" action="/donation-check" enctype="multipart/form-data">
                     {{csrf_field()}}
-                    <input name="donasi_id" type="hidden" class="form-control" value="{{ $donasi->id }}">
+                   <input name="post_id" type="hidden" class="form-control" value="{{ $post->id }}">
                    <input name="" type="hidden" class="form-control" value="">
-                   <div class="form-group row">
-                       <label for="email" class="col-md-4 col-form-label text-md-right" id="email">Email</label>
-                       <div class="col-md-6">
-                       <input name="email" type="text" class="form-control" id="signin-email" value="{{ old('email') }}" autocomplete="off">
-                       </div>
-                       <span style="color:red; margin-left: 240px">{{ $errors->first('email') }}</span>
-                   </div>
-                   <div class="form-group row">
-                       <label for="notlp" class="col-md-4 col-form-label text-md-right">No Telephone</label>
-                       <div class="col-md-6">
-                       <input name="notlp" type="number" class="form-control" id="notlp" value="{{ old('notlp') }}" autocomplete="off">
-                       </div>
-                       <span style="color:red; margin-left: 240px">{{ $errors->first('notlp') }}</span>
-                   </div>
                    <div class="form-group row">
                        <label for="namalengkap" class="col-md-4 col-form-label text-md-right">Nama Lengkap</label>
                        <div class="col-md-6">
@@ -36,11 +22,32 @@
                        <span style="color:red; margin-left: 240px">{{ $errors->first('namalengkap') }}</span>
                    </div>
                    <div class="form-group row">
+                       <label for="notlp" class="col-md-4 col-form-label text-md-right">No Telephone / WA</label>
+                       <div class="col-md-6">
+                       <input name="notlp" type="number" class="form-control" id="notlp" value="{{ old('notlp') }}" autocomplete="off">
+                       </div>
+                       <span style="color:red; margin-left: 240px">{{ $errors->first('notlp') }}</span>
+                   </div>
+                   <div class="form-group row">
+                       <label for="email" class="col-md-4 col-form-label text-md-right" id="email">Email</label>
+                       <div class="col-md-6">
+                       <input name="email" type="text" class="form-control" id="signin-email" value="{{ old('email') }}" autocomplete="off">
+                       </div>
+                       <span style="color:red; margin-left: 240px">{{ $errors->first('email') }}</span>
+                   </div>
+                   <div class="form-group row">
+                       <label for="nominal" class="col-md-4 col-form-label text-md-right">Nominal</label>
+                       <div class="col-md-6">
+                       <input name="nominal" type="number" class="form-control" id="nominal" value="{{ old('nominal') }}" autocomplete="off" placeholder="Rp.">
+                       </div>
+                       <span style="color:red; margin-left: 240px">{{ $errors->first('nominal') }}</span>
+                   </div>
+                   <div class="form-group row">
                        <label for="metodebayar" class="col-md-4 col-form-label text-md-right">Metode Pembayaran</label>
                        <div class="col-md-6">
                          <select class="form-control col-md-12" id="metodebayar" name="optionbayar">
                            @foreach($metodebayar as $item)
-                                <option value="{{$item->nama}}"> {{$item->nama}} <span> | </span><strong value="{{$item->nomor}}">{{$item->nomor}}</strong> </option>
+                                <option value="{{$item->nama}}"> {{$item->nama}} </option>
                                @endforeach
                          </select>
                        </div>

@@ -15,10 +15,12 @@
        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
         <!-- Bootstrap core CSS -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- TOASTR -->
+      	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
           <!-- Material Design Bootstrap -->
-          <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
         <style>
             body {
@@ -29,7 +31,7 @@
     <body>
       <nav class="navbar fixed-top navbar-light navbar-expand-lg text-center" style="box-shadow: none; background-color:#ffffff">
         <div class="container">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
             <img src="/Logo/logo1.png" width="50" height="50" dclass="d-inline-block align-top"  alt="">
            <h class="navbar-brand h1" style="color:#000; font-size: 25px; font-family: 'Roboto', sans-serif; font-weight:900px;">KUDUS BISA</h>
           </a>
@@ -42,7 +44,7 @@
             <a class="nav-link"  href="/"><span>Beranda</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"href="/donasi"><span>Donasi</span></a>
+            <a class="nav-link"href="/berita"><span>Berita</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="/tentang"><span>Tentang</span></a>
@@ -93,7 +95,7 @@
         <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase mb-4" style="opacity:0.5;">Contact</h6>
-              <p ><i class="fas fa-envelope mr-2"></i>kudosbisateams@gmail.com</p>
+              <p ><i class="fas fa-envelope mr-2"></i>teamskudusbisa.kds@gmail.com</p>
           <p>
             <i class="fas fa-phone mr-2"></i> +62 896 8976 4256</p>
           <p>
@@ -156,10 +158,19 @@
     <!-- Footer Links -->
 
   </footer>
-</body>
-<script src="https://kit.fontawesome.com/yourcode.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
+<script>
+@if(Session::has('sukses'))
+    toastr.success("{{Session::get('sukses')}}","SUKSES")
+ @endif
+</script>
+
+@yield('footer')
+</body>
 </html>

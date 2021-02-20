@@ -4,16 +4,20 @@
 <div class="container" style="margin-top:5rem;">
   <div class="donasi-judul" id="donasi">
     <?php
-    if($ada == "200"){
-    ?>
-  <h1 class="text-center" style="font-family: 'Roboto', sans-serif; font-size:20px;">Berita Berdasarkan Wilayah {{$kec}}</h1>
+    if($ada == "TRUE"){
+     ?>
+      <h1 class="text-center" style="font-family: 'Roboto', sans-serif; font-size:20px;">Berita Berdasarkan Wilayah {{$kec}}</h1>
     <?php
-  }elseif($ada == "204"){
-    ?>
-      <h1 class="text-center" style="font-family: 'Roboto', sans-serif; font-size:20px;">KOSONG</h1>
+  }elseif($ada == "FALSE"){
+      ?>
+      <div class="container mx-auto">
+        <div class="alert alert-danger" style="margin-bottom:20rem; margin-top:10rem;"role="alert">
+           Berita Berdasarkan Wilayah {{$kec}} Masih <strong>Kosong.</strong>
+       </div>
+      </div>
       <?php
-   }
-   ?>
+    }
+    ?>
 
 
   </div>
@@ -37,10 +41,9 @@
           </div>
         </div>
 
-    
+
         @endforeach
     </div>
   </div>
-<a href="/donasi" class="btn text-white" style="background-color:#3C3C55; text-transform: inherit; margin-bottom:20px;">Lebih Banyak</a>
 </div>
 @stop

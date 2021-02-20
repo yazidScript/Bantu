@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Donatur extends Model
 {
   protected $table = 'donatur';
-  protected $fillable = ['id','donasi_id','email','notlp','nama','metodebayar'];
+  protected $fillable = ['id','post_id','nominal','email','notlp','nama','metodebayar','status','created_at'];
 
   public function donasi()
   {
@@ -16,5 +16,9 @@ class Donatur extends Model
   public function donatur()
   {
     return $this->belongsTo(Donatur::class);
+  }
+  public function posts()
+  {
+    return $this->hasMany(Post::class);
   }
 }

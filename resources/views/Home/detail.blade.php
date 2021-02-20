@@ -30,23 +30,16 @@
                       <div class="col-12 order-md-2 order-1">
                           <div class="img-detail">
                               <picture class="lazy loaded">
-                                  <img alt="img-kudusbisa" class="lazy col-14 loaded" src="{{url('/images/'."$donasi->gambar")}}"/>
+                                  <img alt="img-kudusbisa" class="lazy col-14 loaded" style="width:100%;" src="{{url('/images/'."$donasi->gambar")}}"/>
                               </picture>
                           </div>
                       </div>
-                      <div class="donasi-detail-tanggal col-12 order-md-1 mb-3"><strong class="text-danger">Kudus Bisa</strong><span> </span>19 feb 2021</div>
+                      <div class="donasi-detail-tanggal col-12 order-md-1 mb-3"><strong class="text-danger">Kudus Bisa</strong><span> </span></div>
                   </div>
               </div>
               <div class="donasi-detail-body">
                   <p>Hai Donatur,</p>
                   <p>{{$donasi->isi}}</p>
-              </div>
-              <div class="donasi-detail">
-                  <div class="donasi-detail d-flex flex-column align-items-center">
-                      <a class="mb-2 mt-3" href="/detail/{{$donasi->id}}/donation-check">
-                          <button class="btn btn-danger px-5" style="text-transform:inherit;"><span>Donasi Sekarang !</span></button>
-                      </a>
-                  </div>
               </div>
           </div>
 
@@ -54,7 +47,7 @@
   </section>
   <div class="container">
     <div class="last-update">
-      <h1 style="font-size:30px;">Berita | Donasi Lainnya</h1>
+      <h1 style="font-size:30px;">Berita Lainnya</h1>
         <div class="card-last-update mt-5 mb-5">
           <div class="row">
                 @foreach($donasi as $data)

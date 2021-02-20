@@ -6,7 +6,7 @@
     <div class="container">
           <img src="./Banner/bg-logo.svg" height="300px" width="300px" alt="">
           <div class="desc">
-            <h1>#JAGA KUDUS</h1>
+            <h1 style="font-weight:bold;">#JAGA KUDUS</h1>
             <p>Donasikan sedikit uang anda untuk warga yang terkena bencana</p>
             <a href="" class="btn text-white" style="background-color:#E40B0B; text-transform:inherit;">Donasi Yuk</a>
           </div>
@@ -21,7 +21,7 @@
              <div class="row">
                  <div class="col-12">
                      <picture class="img-tentang">
-                         <img alt="img tentang" class="col-12" src="./asset/gambar1.png" type="image/jpeg"/>
+                         <img alt="img tentang" class="col-12" src="/asset/gambar2.png" type="image/jpeg"/>
                          <!-- <h1 style="font-size:30px; display:flex; justify-content: center;">Kudus Bisa !</h1> -->
                      </picture>
                  </div>
@@ -31,7 +31,7 @@
              <h1 class="title-hero" style="font-size:28px;">Waspada Virus Corona</h1>
              <div class="mb-2 mb-md-4" style="paddin-bottom:2px;">
                  Covid-19 / Corona<br />
-                 Waspada dengan virus corona , yang sedang mengintai kita terutama di <strong>Kudus</strong> semoga kita semua terhindar dari virus tersebut,Informasi selanjutnya bisa dilihat <a href="https://www.covid19.go.id/" style="text-uppercase:inline;">DISINI</a><br />
+                 Waspada dengan virus corona , yang sedang mengintai kita terutama di <strong>Kudus</strong> semoga kita semua terhindar dari virus tersebut,Informasi selanjutnya bisa dilihat <a href="https://www.covid19.go.id/" target="_blank" style="text-uppercase:inline;">DISINI</a><br />
                  Mari kita semua menaati peraturan / protokol kesehatan dengan melakukan 3M <br />
                  <br />
 
@@ -40,55 +40,27 @@
      </div>
  </div>
 </section>
-<div class="container mt-5 mb-5">
-  <div class="judul-kategory">
-    <h1 class="Kategori" style="font-family: 'Roboto' sans-serif; font-size:28px;">Kecamatan Kudus</h1>
-    <!-- <i class="fas fa-arrow-right me-auto"></i> -->
-  </div>
-  <!-- <div class="row">
-    <div class="container carousel-next">
-         <i class="fas fa-arrow-right" style="display:flex; margin-right:100px; "></i>
-    </div>
-    <div class="container carousel-prev">
-          <i class="fas fa-arrow-left" style="display:flex; margin-right:100px; "></i>
-    </div>
-  </div> -->
-<div class="kecamatan">
-  <div class="row">
-    <?php foreach ($kec as $e): ?>
 
-    <div class="py-3 col-md-2">
-       <div class="card" style="border-radius:15px;">
-         <div class="card-body">
-           <h5 class="card-title text-center" style="font-weight: bold;"><a href="/kecamatan/{{$e->nama}}" style="text-decoration:none;">{{$e->nama}}</a></h5>
-         </div>
-       </div>
-    </div>
-  <?php endforeach; ?>
-
-
-</div>
-</div>
-</div>
 <div class="container mt-5 mb-5">
   <div class="donasi-judul" id="donasi">
-      <h1 style="font-family: 'Roboto', sans-serif; font-size:28px;">Donasi & Berita</h1>
+      <h1 style="font-family: 'Roboto', sans-serif; font-size:28px;">Berita Terbaru</h1>
   </div>
   <div class="card-donasi" id="card-donasi">
 
     <div class="row">
-        @foreach($donasi as $data)
+        @foreach($posts as $data)
         <div class="py-3 col-md-4">
           <div class="card" style="height: 100%;">
             <div class="donasi-img-wrapper">
-              <img src="../images/{{ $data->gambar }}"class="card-img-top" style="height: 100%;" alt="..."/>
+              <img src="../images/{{$data->thumbnail()}}"class="card-img-top" style="height: 100%;" alt="..."/>
             </div>
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title">{{$data->judul}}</h5>
+              <p class="card-kategory small text-primary">{{$data->kategori}}</p>
+              <h5 class="card-title">{{$data->title}}</h5>
               <p class="card-text">
-                {{$data->isi}}
+                {!! $data->content!!} <a href="{{Route('detail.post',$data->slug)}}" class="text-danger">Read More</a>
               </p>
-              <button class="card-btn"><a href="/donasi/{{$data->id}}/detail-donasi" style="text-decoration:none;">Selengkapnya </a><span>&rarr;</span></button>
+              <button class="card-btn"><a href="/donation/{{$data->id}}/donation-check" style="text-decoration:none;">Donasi Sekarang </a><span>&rarr;</span></button>
             </div>
 
           </div>
@@ -96,7 +68,6 @@
         @endforeach
     </div>
   </div>
-  <a href="/donasi" class="btn text-white" style="background-color:#3C3C55; text-transform: inherit; margin-bottom:20px;">Lebih Banyak</a>
+  <a href="/berita" class="btn text-white" style="background-color:#3C3C55; text-transform: inherit; margin-bottom:20px;">Lebih Banyak</a>
 </div>
-
 @stop

@@ -20,6 +20,11 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <!-- carbody -->
   <link rel="stylesheet" href="/Admin/css/style.css">
+  <style>
+  .ck-editor__editable_inline {
+     min-height: 500px;
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -34,18 +39,18 @@
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        <i class="fas fa-user"></i>
-      </a>
-      <div class="dropdown-menu dropdown-menu-right dropdown-default"
-        aria-labelledby="navbarDropdownMenuLink-333">
-        <a class="dropdown-item" href="">Login</a>
-        <a class="dropdown-item" href="">Logout</a>
-      </div>
-    </li>
-    </ul>
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-user"></i>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right dropdown-default"
+    aria-labelledby="navbarDropdownMenuLink-333">
+    <a class="dropdown-item" href="/login">Login</a>
+    <a class="dropdown-item" href="/logout">Logout</a>
+  </div>
+</li>
+</ul>
   </nav>
   <!-- /.navbar -->
 
@@ -76,7 +81,7 @@
 
         </li>
         <li class="nav-item has-treeview">
-          <a href="/dashboard" class="nav-link">
+          <a href="/dashboard/donatur" class="nav-link">
             <i class="nav-icon fas fa-user"></i>
             <p>
                Donatur
@@ -84,18 +89,18 @@
           </a>
         </li>
         <li class="nav-item has-treeview">
-          <a href="/dashboard/donasi" class="nav-link">
-            <i class="nav-icon fas fa-user"></i>
+          <a href="/dashboard/pengajuan" class="nav-link">
+            <i class="nav-icon far fa-envelope"></i>
             <p>
-               Donasi | Berita
+               Pengajuan
             </p>
           </a>
         </li>
         <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-user"></i>
+          <a href="/post" class="nav-link">
+            <i class="nav-icon fas fa-edit"></i>
             <p>
-               Pemohon
+               Post Berita
             </p>
           </a>
         </li>
@@ -125,18 +130,18 @@
 <!-- jQuery -->
 
 <script src="/Admin/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
 <script src="/Admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
 <script src="/Admin/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
 <script src="/Admin/js/demo.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{{asset('js/ckeditor.js')}}"></script>
+
 <script>
 @if(Session::has('sukses'))
     toastr.success("{{Session::get('sukses')}}","SUKSES")
  @endif
 </script>
+@yield('footer')
 </body>
 </html>

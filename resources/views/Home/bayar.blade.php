@@ -68,7 +68,17 @@
              <li>Beri Keterangan / Alias <br> <strong>" nama kamu , Donasi Kudus Bisa "</strong></li>
              <li>Pembayaran anda Selesai</li>
            </ol>
+
          </ul>
+         Cara Donasi
+         <ul>
+           <ol>
+             <li>Pilih Berita yang ingin kamu donasi</li>
+             <li>Isi form yang disediakan</li>
+             <li>Transfer nominal yang kamu sudah donasikan melalui pembayaran yang dipilih</li>
+             <li>Setelah Anda transfer , Admin akan memproses pembayaranmu Bila sudah masuk , Anda akan mendpatakan notifikasi dari email</li>
+            <li>Donasi Anda<strong> Selesai</strong></li>
+           </ol>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Mengerti</button>
@@ -100,6 +110,16 @@
              <li>Lalu, ada pertanyaan tentang No Referensi. Bagian ini bisa dikosongkan.</li>
              <li>Selembar struk akan keluar dari ATM. Jangan membuang struk ini karena akan menjadi bukti yang menunjukkan Anda sudah melakukan transaksi</li>
              <li>Pembayaran donasi anda selesai</li>
+           </ol>
+         </ul>
+         Cara Donasi
+         <ul>
+           <ol>
+             <li>Pilih Berita yang ingin kamu donasi</li>
+             <li>Isi form yang disediakan</li>
+             <li>Transfer nominal yang kamu sudah donasikan melalui pembayaran yang dipilih</li>
+             <li>Setelah Anda transfer , Admin akan memproses pembayaranmu Bila sudah masuk , Anda akan mendpatakan notifikasi dari email</li>
+            <li>Donasi Anda<strong> Selesai</strong></li>
            </ol>
          </ul>
       </div>

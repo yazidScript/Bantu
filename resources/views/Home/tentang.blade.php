@@ -13,7 +13,7 @@
                       <div class="row">
                           <div class="col-12">
                               <picture class="img-tentang">
-                                  <img alt="img tentang" class="col-12" src="./asset/gambar2.png">
+                                  <img alt="img tentang" class="col-12" src="/asset/gambar3.png">
                                   <!-- <h1 style="font-size:30px; display:flex; justify-content: center;">Kudus Bisa !</h1> -->
                               </picture>
                               <div class="u-lazy__placeholder-2"></div>
@@ -44,42 +44,71 @@
 
       <div class="col-12 col-md col-md">
         <div class="judul-kategory" style="padding-bottom:3px;">
-            <h1 style="font-family: 'Roboto', sans-serif;">Permohonan Bantuan</h1>
-            <p>Permohonan Bantuan ini adalah sifatnya umum dikhususkan untuk daerah kudus bila disekitar anda (kudus) ada bencana atau musibah lainnya yang mungkin butuh donasi untuk membantu korban tersebut maka <strong>Kudus Bisa</strong> akan membantu
-            sebisa mungkin , dengan mengajukan permohonan melalui form dibawah ini.</p>
+            <h1 style="font-family: 'Roboto', sans-serif;">Pengajuan Bantuan</h1>
+            <p>Pengajuan Bantuan ini adalah sifatnya umum dikhususkan untuk daerah kudus bila disekitar anda (kudus) ada bencana atau musibah lainnya yang mungkin butuh donasi untuk membantu korban tersebut maka <strong>Kudus Bisa</strong> akan membantu
+            sebisa mungkin , dengan mengajukan Pengajuan melalui form dibawah ini.  <a data-toggle="modal" data-target="#exampleModal" class="text-primary">Syarat & Ketentuan</a> </p>
         </div>
 
 
           <div class="row col-lg-12 mb-4">
-            <form>
+          <form method="POST" action="/pengajuan" enctype="multipart/form-data">
+            {{csrf_field()}}
               <div class="form-group">
-                <label for="inputNoHp">Nama</label>
-                <input type="text" class="form-control" id="NoHp" placeholder="">
+                <label for="namalengkap">Nama Lengkap</label>
+                <input name="namalengkap" type="text" class="form-control" id="namalengkap" placeholder="">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="inputEmail4">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="">
+                  <label for="email">Email (aktif)</label>
+                  <input name="email" type="email" class="form-control" id="email" placeholder="">
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="inputPassword4">No HP</label>
-                  <input type="text" class="form-control" id="nama" placeholder="">
+                  <label for="notlp">No Telephone (aktif)</label>
+                  <input name="notlp" type="text" class="form-control" id="notlp" placeholder="">
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputDate">Tanggal</label>
-                <input type="date" class="form-control" id="date" placeholder="">
+                <input name="tanggal" type="date" class="form-control" id="date" placeholder="tanggal musibah / bencana ">
               </div>
               <div class="form-group">
-                <label for="inputAddress">Alamat (alamat bencana)</label>
-                <textarea class="form-control" id="alamat" rows="3"></textarea>
+                <label for="alamat">Alamat</label>
+                <textarea name="alamat" class="form-control" id="alamat" rows="3" placeholder="alamat yang terkena bencana / musibah"></textarea>
               </div>
               <button type="submit" class="btn text-white" style="background-color:#E40B0B;">Kirim</button>
             </form>
         </div>
-
           </div>
     </div>
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Syarat & Ketentuan</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Bila Pengajuan Bantuan sudah memenuhi syarat akan Di verifikasi Admin dalam waktu 1X24 jam dan  Anda akan menerima email dari kami<br><hr>
+            Syarat Pengajuan
+            <ul>
+              <ol>
+                <li>Bencana / Musibah hanya berada didaerah Kudus</li>
+                <li>Usia Pengaju Bantuan Min - 18th</li>
+                <li>Berita bencana / musibah benar - benar ada</li>
+                <li>Bila Berita bencana / musibah <strong> Hoaxs </strong> tidak kami proses</li>
+              </ol>
 
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Mengerti</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 @stop
