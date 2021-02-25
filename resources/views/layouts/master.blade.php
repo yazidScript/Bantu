@@ -16,7 +16,7 @@
         <!-- Bootstrap core CSS -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <!-- TOASTR -->
-      	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
           <!-- Material Design Bootstrap -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
@@ -166,11 +166,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 <script>
-@if(Session::has('sukses'))
-    toastr.success("{{Session::get('sukses')}}","SUKSES")
+@if(Session::has('suksess'))
+    toastr.success("{{Session::get('suksess')}}","SUKSES")
  @endif
 </script>
-
 @yield('footer')
 </body>
 </html>

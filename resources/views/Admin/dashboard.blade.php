@@ -7,7 +7,7 @@
             <!-- small card -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>{{$count}}</h3>
+                <h3>{{TotalPost()}}</h3>
 
                 <p>Berita | Donasi</p>
               </div>
@@ -41,7 +41,7 @@
             <!-- small card -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>{{$count}}</h3>
+                <h3>{{TotalDonatur()}}</h3>
 
                 <p>Donatur</p>
               </div>
@@ -58,7 +58,7 @@
             <!-- small card -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                 <h3>{{TotalPengajuan()}}</h3>
 
                 <p>Pengajuan</p>
               </div>

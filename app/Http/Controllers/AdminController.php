@@ -19,14 +19,18 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-      $count = Donatur::count();
-      // $count_donasi = Donasi::count();
-      return view('Admin.dashboard')->with('count', $count);
+
+      return view('Admin.dashboard');
     }
 
     public function donatur(Request $request)
     {
-      $donatur = Donatur::all();
+      if ($request->has('cari')) {
+         $donatur = Donatur::where('namalengkap','LIKE','%' .$request->cari. '%')->get();
+      }else {
+          $donatur = Donatur::all();
+      }
+
       return view('Admin.Donatur.index',compact('donatur'));
     }
     public function export()
@@ -114,4 +118,5 @@ class AdminController extends Controller
       $donatur = Donatur::where('status','diterima')->get();
       return view('admin.status',compact('donatur'));
     }
+
    }

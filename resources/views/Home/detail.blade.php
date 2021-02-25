@@ -38,7 +38,9 @@
                   </div>
               </div>
               <div class="donasi-detail-body">
-                  <p>Hai Donatur,</p>
+                  <p>Hai Donatur,</p> <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+  Tooltip on right
+</button>
                   <p>{{$donasi->isi}}</p>
               </div>
           </div>
@@ -47,7 +49,7 @@
   </section>
   <div class="container">
     <div class="last-update">
-      <h1 style="font-size:30px;">Berita Lainnya</h1>
+      <h1 style="font-family: 'Roboto', sans-serif; font-size:28px;">Berita Terbaru</h1>
         <div class="card-last-update mt-5 mb-5">
           <div class="row">
                 @foreach($donasi as $data)

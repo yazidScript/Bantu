@@ -19,7 +19,7 @@
        </li> -->
        <li class="list-group-item">
          <div class="text-center">
-             <a data-toggle="modal" data-target="#modal-2" class="ml-2" style="color:#E40B0B;">Syarat & Ketentuan </a>
+             <a data-toggle="modal" data-target="#modal-2" class="ml-2" style="color:#E40B0B;">Cara Bayar & Donasi</a>
          </div>
         </li>
    </ul>
@@ -35,7 +35,7 @@
     </li>
      <li class="list-group-item">
        <div class="text-center">
-           <a data-toggle="modal" data-target="#exampleModalLong" class="ml-2" style="color:#E40B0B;">Syarat & Ketentuan </a>
+           <a data-toggle="modal" data-target="#exampleModalLong" class="ml-2" style="color:#E40B0B;">Cara Bayar & Donasi</a>
        </div>
       </li>
   </ul>
@@ -51,7 +51,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Syarat & Ketentuan</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Cara Bayar & Donasi</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -82,6 +82,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Mengerti</button>
+        <!-- <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="/cara-bayar/ExportPDF"> Download</a></button> -->
       </div>
     </div>
   </div>
@@ -90,7 +91,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modal-2-title">Syarat & Ketentuan</h5>
+        <h5 class="modal-title" id="modal-2-title">Cara Bayar & Donasi</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -125,6 +126,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Mengerti</button>
+        <!-- <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="/cara-bayar/ExportPDF"> Download</a></button> -->
       </div>
     </div>
   </div>

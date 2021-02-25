@@ -10,15 +10,23 @@
            <div class="card-body">
              <form method="POST" action="{{Route('post.store')}}" enctype="multipart/form-data">
                  {{csrf_field()}}
+
                  <div class="form-group row">
-                     <label for="title" class="col-md-4 col-form-label text-md-right" id="title">Title</label>
+                     <label for="title" class="col-md-4 col-form-label text-md-right" id="title">Judul</label>
                      <div class="col-md-6">
                      <input name="title" type="text" class="form-control" id="title" value="{{ old('title') }}">
                      </div>
                      <span style="color:red; margin-left: 240px">{{ $errors->first('title') }}</span>
                  </div>
                  <div class="form-group row">
-                     <label for="kategori" class="col-md-4 col-form-label text-md-right">Kategori Bencana</label>
+                     <label for="penerima" class="col-md-4 col-form-label text-md-right" id="title">Penerima</label>
+                     <div class="col-md-6">
+                     <input name="penerima" type="text" class="form-control" id="penerima" value="{{ old('penerima') }}">
+                     </div>
+                     <span style="color:red; margin-left: 240px">{{ $errors->first('title') }}</span>
+                 </div>
+                 <div class="form-group row">
+                     <label for="kategori" class="col-md-4 col-form-label text-md-right">Kategori</label>
                      <div class="col-md-8">
                        <select class="form-control col-md-6" id="kategori" name="optionkat">
                          @foreach($kategori as $item)
@@ -59,6 +67,7 @@
 </div>
 @stop
 @section('footer')
+
 <script>
     ClassicEditor
         .create( document.querySelector( '#content' ) )

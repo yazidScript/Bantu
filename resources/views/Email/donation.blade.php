@@ -46,13 +46,14 @@
                 <p style="font-family: monospace;">Pembayaran Yang Anda Pilih : {{$item->metodebayar}}<br>
                 @foreach( $posts as $post )
                   <p style="font-family: monospace;">Donasi Yang Anda Pilih: {{ $post->title }}<br>
+                  <p style="font-family: monospace;">Donasi Ini Akan Kamai Serahkan ke: {{ $post->penerima }}<br>
                 @endforeach
                 <?php endforeach; ?>
                 <span style="text-align: center; font-family: sans-serif; font-weight: lightgrey" >
         </div>
         <div class="footer">
           <p style="font-size: 10px; font-family: sans-serif; text-align: center; opacity:0.6;">TERIMAKASIH TELAH BERDONASI ,SEMOGA DONASI MU BERMANFAAT , AMIN..</p>
-          <p style="font-size: 8px; font-family: sans-serif; text-align: center;  font-weight: light; opacity: 0.5;"> &copy; Copyright 2019 RPL RUS WEB DEV</p>
+          <p style="font-size: 8px; font-family: sans-serif; text-align: center;  font-weight: light; opacity: 0.5;"> &copy; Copyright 2021 Kudus Bisa</p>
         </div>
 
       </span>

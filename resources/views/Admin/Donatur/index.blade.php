@@ -5,6 +5,15 @@
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Daftar Donatur</h3>
+              <form class="card-tools ml-3" method="get" action="/dashboard/donatur">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="cari" class="form-control float-right" placeholder="Cari Donatur">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                </form>
                 <div style="float:right; margin-left:4px;">
                   <a href="/donatur/export/" type="button" class="btn btn-success btn-sm" >
                     Export Donatur

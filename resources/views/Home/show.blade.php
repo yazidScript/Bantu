@@ -30,17 +30,35 @@
                       <div class="col-12 order-md-2 order-1">
                           <div class="img-detail">
                               <picture class="lazy loaded">
-                                  <img alt="img-kudusbisa" class="lazy col-14 loaded" style="width:100%;" src="../images/{{ $post->thumbnail }}"/>
+                                  <img alt="img-kudusbisa" class="lazy col-14 loaded" style="width:100%; height:100%;" src="../images/{{ $post->thumbnail }}"/>
                               </picture>
                           </div>
                       </div>
-                      <div class="donasi-detail-tanggal col-12 order-md-1 mb-3"><strong class="text-danger">{{$post->kategori}}</strong> <span style="font-weight:italic;">{{$post->created_at->format('d M Y')}}</span></div>
+                      <div class="donasi-detail-tanggal col-12 order-md-1 mb-3"><strong class="text-danger">{{$post->kategori}}</strong> , <span style="font-weight:italic;">{{$post->created_at->format('d M Y')}}</span></div>
                   </div>
               </div>
               <div class="donasi-detail-body">
-                  <p>Hai Donatur,</p>
+                <p>
+                  <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Rincian
+                  </a>
+                </p>
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body">
+                    Rincian Donasi dari <strong>{{$post->title}}</strong> <br>
+                    <ul>
+                      <ol>
+                        Donasi Terkumpul - Sekarang = <strong class="text-danger">Rp.{{number_format ($post->jumlah_sekarang)}} </strong> <br>
+                        Donasi Ini Akan Kami Serahkan Ke = <strong>{{$post->penerima}}</strong>
+                      </ol>
+
+                    </ul>
+                  </div>
+                </div>
+                <p>
                   <p>{!! $post->content!!}</p>
               </div>
+              <a class="text-white btn btn-danger" href="/donation/{{$post->id}}/donation-check" style="text-decoration:none; width:100%;">Donasi Sekarang</a>
           </div>
 
       </div>
@@ -49,17 +67,16 @@
       <div class="main">
           <div class="row">
             <div class="col-md-4">
-              <h1>Berita Lainyya</h1>
+            <h1 style="font-family: 'Roboto', sans-serif; font-size:28px;">Berita Lainnya</h1>
             </div>
           </div>
           <div class="row">
-            @foreach ($post->all() as $post)
+            @foreach ($post->all()->take(3) as $data)
             <div class="py-3 col-md-4">
-
-              <div class="card" style="width: 100%;">
-                <img src="../images/{{ $post->thumbnail }}" class="card-img-top" alt="...">
+              <div class="card" >
+                <img src="../images/{{ $data->thumbnail }}" class="card-img-top" alt="thumbnail">
                 <div class="card-body">
-                  <p class="card-text">{{ $post->title }}</p>
+                  <a href="{{Route('detail.post',$data->slug)}}" style="font-weight:bold; color:#000;">{{ $data->title }}</a>
                 </div>
               </div>
             </div>
@@ -68,4 +85,9 @@
       </div>
   </div>
 </div>
+@stop
+@section ('footer')
+ <script>
+   $('.collapse').collapse()
+ </script>
 @stop

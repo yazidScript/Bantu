@@ -5,20 +5,27 @@
 <div class="row justify-content-center">
    <div class="col-md-8">
        <div class="card mt-3">
-           <div class="card-header bg-primary text-white text-left ">Tambah Berita</div>
+           <div class="card-header bg-warning text-white text-left ">Edit Berita</div>
            <div class="card-body">
              <?php foreach ($post as $p): ?>
              <form method="POST" action="/post/{{$p->id}}/update" enctype="multipart/form-data">
                {{csrf_field()}}
                  <div class="form-group row">
-                     <label for="title" class="col-md-4 col-form-label text-md-right" id="title">Title</label>
+                     <label for="title" class="col-md-4 col-form-label text-md-right" id="title">Judul</label>
                      <div class="col-md-6">
                      <input name="title" type="text" class="form-control" id="title" value="{{ $p->title }}">
                      </div>
                      <span style="color:red; margin-left: 240px">{{ $errors->first('title') }}</span>
                  </div>
                  <div class="form-group row">
-                     <label for="kategori" class="col-md-4 col-form-label text-md-right">Kategori Bencana</label>
+                     <label for="penerima" class="col-md-4 col-form-label text-md-right" id="title">Penerima</label>
+                     <div class="col-md-6">
+                     <input name="penerima" type="text" class="form-control" id="penerima" value="{{ $p->penerima }}">
+                     </div>
+                     <span style="color:red; margin-left: 240px">{{ $errors->first('penerima') }}</span>
+                 </div>
+                 <div class="form-group row">
+                     <label for="kategori" class="col-md-4 col-form-label text-md-right">Kategori</label>
                      <div class="col-md-8">
                        <select class="form-control col-md-6" id="kategori" name="optionkat">
                          @foreach($kategori as $item)
@@ -44,7 +51,6 @@
                      </div>
                      <span style="color:red; margin-left: 240px">{{ $errors->first('thumbnail') }}</span>
                  </div>
-
                  <div class="form-group">
                         <label>Content Berita</label>
                         <textarea name="content" class="form-control" rows="3" id="content" value="">{{ $p->content }}</textarea>
@@ -53,7 +59,7 @@
                         </script>
                       </div>
                  <div class="text-center">
-                         <button class="btn btn-primary btn-block my-4 mx-auto col-md-10" type="submit">Update</button>
+                         <button class="btn btn-primary btn-warning my-4 mx-auto col-md-10" type="submit">Edit</button>
                  </div>
              </form>
              <?php endforeach; ?>

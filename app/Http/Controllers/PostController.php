@@ -14,8 +14,13 @@ class PostController extends Controller
 
    public function index(Request $request)
    {
-      $posts = Post::all();
-      $users = User::all();
+     if ($request->has('cari')) {
+         $posts = Post::where('title','LIKE','%' .$request->cari. '%')->get();
+     }else {
+       $posts = Post::all();
+       $users = User::all();
+     }
+
       return view ('Admin.Post.index',compact('posts'));
    }
    public function singlepost($slug)
@@ -26,6 +31,7 @@ class PostController extends Controller
 
    public function create()
    {
+
      $kategori = Kategory::all();
      $kecamatan = Kecamatan::all();
      return view('Admin.Post.create',['kecamatan' => $kecamatan,'kategori'=> $kategori]);
@@ -35,16 +41,17 @@ class PostController extends Controller
    {
      $filename = time() . '.' . $request->file('thumbnail')->getClientOriginalExtension();
      $request->file('thumbnail')->move('images', $filename);
-
      $post = Post::create([
        'user_id' => '1',
+       'jumlah_sekarang' => 0,
+       'penerima' => $request->penerima,
        'title' =>$request->title,
        'kecamatan' => $request->option,
        'kategori'  => $request->optionkat,
        'content' => $request->content,
        'thumbnail' => $filename
      ]);
-     return redirect('/post')->with('sukses','Data Post Berhasil Dibuat');
+    return redirect('/post')->with('sukses','Data Post Berhasil Dibuat');
    }
    public function edit($slug)
    {
@@ -69,4 +76,13 @@ class PostController extends Controller
      Post::where('slug',$slug)->delete();
      return redirect('/post')->with('sukses','Data Post Berhasil Dihapus');
    }
+   // public function srcThumbnail($imagename){
+   //      $path = storage_path('product_images/'.$imagename);
+   //      if(!File::exists($path)) abort(404);
+   //      $file = File::get($path);
+   //      $type = File::mimeType($path);
+   //      $response = Response::make($file,200);
+   //      $response->header("Content-Type",$type);
+   //      return $response;
+   //    }
 }

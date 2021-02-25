@@ -8,11 +8,18 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Daftar Berita</h3>
+                <form class="card-tools ml-3" method="get" action="/post">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                      <input type="text" name="cari" class="form-control float-right" placeholder="Cari Berita">
 
+                      <div class="input-group-append">
+                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                      </div>
+                    </div>
+                  </form>
                 <div class="card-tools">
                   <div class="right">
                       <a href="{{Route('post.create')}}"><i class="fas fa-plus"></i></a>
-
                   </div>
                 </div>
               </div>
@@ -28,6 +35,7 @@
                       <th>kategori</th>
                       <th>Kecamatan</th>
                       <th>Content</th>
+                      <th>Jumlah Sekarang</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -36,23 +44,21 @@
                     @foreach($posts as $data)
                     <tr>
                        <td>{{$data->id}}</td>
-                       <td>{{$data->user->name}}</td>
                         <td><a data-fancybox="gallery" href="../images/{{ $data->thumbnail }}"><img src="../images/{{ $data->thumbnail }}" class="ml-4" width="60px" height="60px"></td>
                         <td>{{$data->title}}</td>
                         <td>{{$data->slug}}</td>
                         <td>{{$data->kategori}}</td>
                         <td>{{$data->kecamatan}}</td>
-                        <td>{!! $data->content!!}</td>
-                        <td></td>
-                         <td></td>
-                      <td>
-                        <a href="{{Route('donasi.single.post',$data->slug)}}" class="btn btn-sm btn-info">Detail</a>
+                        <td>{{ str_limit(strip_tags($data->content),150)}}</td>
+                        <td><p class="text-danger">Rp.{{number_format ($data->jumlah_sekarang)}}</p></td>
+                        <td><a href="{{Route('donasi.single.post',$data->slug)}}" class="btn btn-sm btn-info">Detail</a><td>
                       </td>
                     </tr>
                     @endforeach
                   </tbody>
 
                 </table>
+              
               </div>
               <!-- /.card-body -->
             </div>

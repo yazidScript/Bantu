@@ -7,7 +7,9 @@ use App\Donatur;
 use App\MetodeBayar;
 use App\Kecamatan;
 use App\Pengajuan;
+use App\Kategory;
 use App\Post;
+use PDF;
 use DB,Hash;
 
 class FrontController extends Controller
@@ -16,14 +18,29 @@ class FrontController extends Controller
   {
      // $req = $request->kec;
      $kec = Kecamatan::all();
-     $posts = Post::all();
+     $posts = Post::latest()->take(3)->get();
      return view("Home.beranda",compact('kec','posts'));
   }
+
    public function berita(Request $request)
    {
+     $kat = Kategory::all();
      $post = Post::all();
-     return view("Home.berita",compact('post'));
+     return view("Home.berita",compact('kat','post'));
    }
+   public function kategori($kat)
+   {
+     $db = Post::where('kategori',$kat)->get();
+     $kategori = Post::where('kategori',$kat)->get();
+     $ada = "TRUE";
+     if (!$db->isEmpty()) {
+        return view('Home.kategori',compact('kategori','kat','ada'));
+     }else {
+       $ada = "FALSE";
+       return view('Home.kategori',compact('kategori','kat','ada'));
+     }
+   }
+
    public function Kecamatan($kec){
      $db = Donasi::where('kecamatan',$kec)->get();
      $kecamatan = Donasi::where('kecamatan',$kec)->get();
@@ -51,15 +68,19 @@ class FrontController extends Controller
      'tanggal' => 'required',
      'alamat' => 'required'
  ]);
+ $filename = time() . '.' . $request->file('gambar')->getClientOriginalExtension();
+ $request->file('gambar')->move('images', $filename);
+
      Pengajuan::insert([
      'email' => $request->email,
      'namalengkap' => $request->namalengkap,
      'notlp'=>$request->notlp,
      'tanggal'=>$request->tanggal,
      'alamat' => $request->alamat,
+     'gambar' => $filename
  ]);
- return redirect('/tentang')->with('sukses','selamat pengajuan anda berhasil , Tunggu Konfirmasi dari Admin');
-  }
+ return redirect('/tentang')->with(['success' => 'Pengajuan Berhasil DiKirim']);
+}
    public function donation(Request $request,$id)
    {
      $post = Post::find($id);
@@ -84,21 +105,50 @@ class FrontController extends Controller
        'metodebayar' => $request->optionbayar,
        'status' => 'Belum diterima'
    ]);
-   return redirect('/')->with('sukses','selamat anda sudah berdonasi , Terima Kasih');
- }
-   public function bayar(Request $request)
+   $jumlah = DB::table('posts')->where('id',$request->post_id)->first();
+   $sum_data = $jumlah->jumlah_sekarang + $request->nominal;
+   $db_donatur = DB::table('posts')->where('id',$request->post_id)->update([
+     'jumlah_sekarang' => $sum_data
+   ]);
+    $nmnl = $request->nominal;
+    $mtd_byr = $request->optionbayar;
+    $db_mtd = MetodeBayar::select('nama','nomor')->where('nama',$mtd_byr)->get();
+    foreach ($db_mtd as $e) {
+      $v = $e->nama;
+      $vv = $e->nomor;
+    }
+    return view('Home.bayar-check',['nama' => $v,'nomor' => $vv,'nominal' => $nmnl])->with(['success' => 'Donasi Berhasil DiKirim']);;
+   }
+
+
+
+
+
+
+   public function carabayar(Request $request)
    {
       $metodebayar = MetodeBayar::all();
-      return view('Home.bayar',['metodebayar' => $metodebayar]);
+      return view('Home.cara-bayar',['metodebayar' => $metodebayar]);
+   }
+
+   public function bayarcheck()
+   {
+     return view('Home.bayar-check');
    }
 
    public function detailpost(Request $request ,$slug)
    {
-     $post = new Post;
+     $post = Post::all()->take(3);
      $post = Post::where('slug' , '=' , $slug)->first();
      return view('Home.show',['post' => $post]);
    }
 
+
+ public function ExportPDF()
+ {
+   $pdf = PDF::loadview('Home/cara-bayar');
+   return $pdf->download('cara-bayar.pdf');
+ }
 
    public function notfoundkec()
    {

@@ -8,7 +8,7 @@
           <div class="desc">
             <h1 style="font-weight:bold;">#JAGA KUDUS</h1>
             <p>Donasikan sedikit uang anda untuk warga yang terkena bencana</p>
-            <a href="" class="btn text-white" style="background-color:#E40B0B; text-transform:inherit;">Donasi Yuk</a>
+            <a href="/berita" class="btn text-white" style="background-color:#E40B0B; text-transform:inherit;">Donasi Yuk</a>
           </div>
     </div>
   </div>
@@ -50,17 +50,16 @@
     <div class="row">
         @foreach($posts as $data)
         <div class="py-3 col-md-4">
-          <div class="card" style="height: 100%;">
+          <div class="card" style="max-height: 100%;">
             <div class="donasi-img-wrapper">
-              <img src="../images/{{$data->thumbnail()}}"class="card-img-top" style="height: 100%;" alt="..."/>
+              <img src="../images/{{$data->thumbnail()}}" class="card-img-top" style="height: 100%;"/>
             </div>
             <div class="card-body d-flex flex-column">
               <p class="card-kategory small text-primary">{{$data->kategori}}</p>
               <h5 class="card-title">{{$data->title}}</h5>
               <p class="card-text">
-                {!! $data->content!!} <a href="{{Route('detail.post',$data->slug)}}" class="text-danger">Read More</a>
+                {{ str_limit(strip_tags($data->content),150)}} <a href="{{Route('detail.post',$data->slug)}}" class="text-danger">Read More</a>
               </p>
-              <button class="card-btn"><a href="/donation/{{$data->id}}/donation-check" style="text-decoration:none;">Donasi Sekarang </a><span>&rarr;</span></button>
             </div>
 
           </div>
@@ -68,6 +67,5 @@
         @endforeach
     </div>
   </div>
-  <a href="/berita" class="btn text-white" style="background-color:#3C3C55; text-transform: inherit; margin-bottom:20px;">Lebih Banyak</a>
 </div>
 @stop

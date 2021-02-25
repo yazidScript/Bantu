@@ -22,12 +22,13 @@ class DonaturExport implements FromCollection, WithMapping,WithHeadings
     {
         return [
             $donatur->id,
-            $donatur->donasi_id,
+            $donatur->post_id,
             $donatur->email,
             $donatur->namalengkap,
             $donatur->notlp,
             $donatur->metodebayar,
-            $donatur->nominal
+            $donatur->nominal,
+            $donatur->status
         ];
     }
     public function headings(): array
@@ -39,7 +40,8 @@ class DonaturExport implements FromCollection, WithMapping,WithHeadings
            'Nama Lengkap',
            'No Telephone',
            'Metode Bayar',
-           'Nominal'
+           'Nominal',
+           'Status'
        ];
    }
 

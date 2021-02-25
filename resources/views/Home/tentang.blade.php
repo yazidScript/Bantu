@@ -5,6 +5,12 @@
   <div class="'banner'" style="height:100px">
   </div>
 </header>
+@if ($message = Session::get('success'))
+	  <div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">×</button>
+		  <strong>{{ $message }}</strong>
+	  </div>
+	@endif
 <div class="container">
          <section class="c-section container-fluid pt-2 pt-md-4">
           <div class="container px-2 px-md-0">
@@ -56,24 +62,34 @@
               <div class="form-group">
                 <label for="namalengkap">Nama Lengkap</label>
                 <input name="namalengkap" type="text" class="form-control" id="namalengkap" placeholder="">
+                 <span style="color:red;">{{ $errors->first('namalengkap') }}</span>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="email">Email (aktif)</label>
                   <input name="email" type="email" class="form-control" id="email" placeholder="">
+                   <span style="color:red;">{{ $errors->first('email') }}</span>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="notlp">No Telephone (aktif)</label>
+                  <label for="notlp">No Telephone / WA</label>
                   <input name="notlp" type="text" class="form-control" id="notlp" placeholder="">
+                   <span  style="color:red;">{{ $errors->first('notlp') }}</span>
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputDate">Tanggal</label>
+                <label for="inputDate">Tanggal Kejadian Bencana</label>
                 <input name="tanggal" type="date" class="form-control" id="date" placeholder="tanggal musibah / bencana ">
+                 <span  style="color:red;">{{ $errors->first('tanggal') }}</span>
               </div>
               <div class="form-group">
                 <label for="alamat">Alamat</label>
                 <textarea name="alamat" class="form-control" id="alamat" rows="3" placeholder="alamat yang terkena bencana / musibah"></textarea>
+                 <span  style="color:red;";>{{ $errors->first('alamat') }}</span>
+              </div>
+              <div class="form-group">
+                  <label for="gambar">Gambar Bukti</label>
+                  <input name="gambar" type="file" class="form-control" value="{{ old('gambar') }}" id="gambar" required>
+                  <span  style="color:red;">{{ $errors->first('gambar') }}</span>
               </div>
               <button type="submit" class="btn text-white" style="background-color:#E40B0B;">Kirim</button>
             </form>
@@ -99,6 +115,7 @@
                 <li>Bencana / Musibah hanya berada didaerah Kudus</li>
                 <li>Usia Pengaju Bantuan Min - 18th</li>
                 <li>Berita bencana / musibah benar - benar ada</li>
+                <li>Upload gambar bencana , sebagai bukti</li>
                 <li>Bila Berita bencana / musibah <strong> Hoaxs </strong> tidak kami proses</li>
               </ol>
 

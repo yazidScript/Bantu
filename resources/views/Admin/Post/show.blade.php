@@ -8,10 +8,16 @@
             <ul class="list-group list-group-unbordered mb-3">
               <img class="rounded container mt-1 mb-2" style="width:130px;height:100px;" src="../images/{{ $post->thumbnail }}" alt="Card image cap">
               <li class="list-group-item">
+                <b class="font-weight-bold">Jumlah Donasi - Sekarang</b> <h class="float-right text-danger"><td>Rp.{{number_format ($post->jumlah_sekarang)}}</td></h>
+              </li>
+              <li class="list-group-item">
                 <b class="font-weight-bold">Dibuat Oleh</b> <a class="float-right">{{$post->user->name}}</a>
               </li>
               <li class="list-group-item">
                 <b class="font-weight-bold">Dibuat Pada</b> <a class="float-right">{{$post->created_at->format('d M Y')}}</a>
+              </li>
+              <li class="list-group-item">
+                <b class="font-weight-bold">Penerima Bantuan</b> <a class="float-right">{{$post->penerima}}</a>
               </li>
               <li class="list-group-item">
                 <b class="font-weight-bold">Judul Berita</b> <a class="float-right">{{$post->title}}</a>
@@ -20,7 +26,7 @@
                 <b class="font-weight-bold">Slug</b> <a class="float-right">{{$post->slug}}</a>
               </li>
               <li class="list-group-item">
-                <b class="font-weight-bold">Kategori</b> <a class="float-right">{{$post->kategori}}</a>
+                <b class="font-weight-bold">Kategori</b> <a class="float-right">{{$post->kategori}} </a>
               </li>
               <li class="list-group-item">
                 <b class="font-weight-bold">Kecamatan</b> <a class="float-right">{{$post->kecamatan}}</a>

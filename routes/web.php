@@ -18,13 +18,18 @@ Route::get('/tentang','FrontController@tentang');
 Route::post('/pengajuan','FrontController@pengajuan');
 Route::get('/donation/{id}/donation-check','FrontController@donation');
 Route::post('/donation-check','FrontController@donationcheck');
-Route::get('/pembayaran','FrontController@bayar');
+Route::get('/pembayaran-check','FrontController@donationcheck');
+Route::get('/cara-bayar','FrontController@carabayar');
+Route::get('/kategori/{kat}','FrontController@kategori');
 Route::get('/kecamatan/{kec}','FrontController@Kecamatan');
+Route::get('/exportpdfbayar','FrontController@ExportPDF');
 Route::get('/notfound','FrontController@notfoundkec');
 
 Route::get('/login','AuthController@login')->name('login');
 Route::post('/postlogin','AuthController@postlogin');
 Route::get('/logout','AuthController@logout');
+
+
 
 //Admin Panel
 Route::get('/post','PostController@index');
@@ -35,11 +40,13 @@ Route::get('/delete/{id}/donatur', 'AdminController@deletedonatur');
 Route::get('/dashboard/pengajuan','AdminController@pengajuan');
 Route::post('/post/{id}/update','PostController@update');
 Route::get('/delete/{id}/pengajuan','AdminController@deletepengajuan');
-
-  Route::get('/dashboard/statusditerima','AdminController@statusditerima');
+Route::get('/jumlah','AdminController@jumlahdonasi');
+Route::get('/dashboard/statusditerima','AdminController@statusditerima');
 Route::get('/donatur/{id}/sendemail','AdminController@sendemail');
 Route::get('/pengajuan/send','AdminController@pengajuanemail');
 Route::post('/pengajuan/send','AdminController@pengajuansend')->name('send.pengajuan');
+Route::get('/thumbnail/{$filename}','PostController@srcThumbnail');
+
 
 //POST Admin
 Route::get('/{slug}',[
@@ -75,4 +82,5 @@ Route::get('/beranda/{slug}',[
 ]);
 
 // Route::group(['middleware' => ['auth','CheckRole:admin']],function(){
+//
 // });

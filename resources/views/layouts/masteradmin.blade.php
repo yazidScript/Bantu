@@ -46,7 +46,6 @@
   </a>
   <div class="dropdown-menu dropdown-menu-right dropdown-default"
     aria-labelledby="navbarDropdownMenuLink-333">
-    <a class="dropdown-item" href="/login">Login</a>
     <a class="dropdown-item" href="/logout">Logout</a>
   </div>
 </li>
@@ -57,7 +56,7 @@
 
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed; overflow-x: hidden; z-index: 1;">
     <!-- Brand Logo -->
     <a  class="brand-link">
       <!-- <img class="logo-admin" src="('/Logo/logo1.png')" alt="logo admin" style="width:40px; height:40px; margin-Left:10px; margin-Right:0;"> -->

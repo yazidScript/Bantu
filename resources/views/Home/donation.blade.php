@@ -5,7 +5,7 @@
 <div class="container my-5" id="donation-id">
 <div class="row justify-content-center">
    <div class="col-md-8 mt-5">
-      <div class="card-header bg-info text-white text-left mb-2 br-3">Cara pembayaran, bisa dilihat di <a href="/pembayaran" style="text-decoration:none;" class="text-white">SINI <span>&rarr;</span> </a></div>
+      <div class="card-header bg-info text-white text-left mb-2 br-3">Cara pembayaran, bisa dilihat di <a href="/cara-bayar" style="text-decoration:none;" class="text-white">SINI <span>&rarr;</span> </a></div>
        <div class="card">
            <div class="card-header bg-danger text-white text-left">Donasi</div>
 
@@ -53,7 +53,7 @@
                        </div>
                        <span style="color:red; margin-left: 240px">{{ $errors->first('metodebayar') }}</span>
                    </div>
-                   <div class="text-center">
+                   <div class="text-center" >
                      <button class="btn btn-danger text-white" style="text-transform:inherit; width:200px;">Donasi</button>
 
                    </div>
