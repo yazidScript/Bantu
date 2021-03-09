@@ -24,13 +24,13 @@
 
 <section class="kategori mt-5 mb-3">
   <div class="container">
-    <div class="kategori mb-3" id="kategori">
+    <div class="mb-3" id="kategori">
         <h1 style="font-family: 'Roboto', sans-serif; font-size:30px;">Kategori Berita</h1>
     </div>
     <div class="row mt-3">
       @foreach($kat as $data)
-      <div class="col-md-2">
-        <div class="card">
+      <div class="col-md-2 mb-3">
+        <div class="card" >
           <div class="card-body">
             <p class="card-title text-center"><a style="color:#000;" href="/kategori/{{$data->nama}}">{{$data->nama}}</a></p>
           </div>
@@ -51,13 +51,13 @@
       <div class="py-3 col-md-4">
         <div class="card" style="height: 100%;">
           <div class="donasi-img-wrapper">
-            <img src="../images/{{$data->thumbnail()}}"class="card-img-top" style="height: 100%;" alt="..."/>
+            <img src="/images/{{$data->thumbnail}}"class="card-img-top" style="height: 100%;" alt="..."/>
           </div>
           <div class="card-body d-flex flex-column">
             <p class="card-kategory small text-primary">{{$data->kategori}}</p>
             <h5 class="card-title">{{$data->title}}</h5>
             <p class="card-text">
-                {{ str_limit(strip_tags($data->content),150)}} <a href="{{Route('detail.post',$data->slug)}}" class="text-danger">Read More</a>
+                {{ \Illuminate\Support\Str::limit(strip_tags($data->content),150)}} <a href="/detail/post/{{$data->slug}}" class="text-danger">Read More</a>
             </p>
           <button class="card-btn"><a href="/donation/{{$data->id}}/donation-check" style="text-decoration:none;">Donasi Sekarang </a><span>&rarr;</span></button>
           </div>

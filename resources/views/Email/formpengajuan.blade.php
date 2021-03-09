@@ -40,10 +40,6 @@
 @stop
 @section('footer')
 <script>
-    ClassicEditor
-        .create( document.querySelector( '#email_body' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+    CKEDITOR.replace( 'email_body');
 </script>
 @stop

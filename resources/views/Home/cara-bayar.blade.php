@@ -2,11 +2,11 @@
 @extends('layouts.master')
 @section('content')
 
-<div class="container" style="margin-top:10rem; margin-bottom:8rem;align-items:center">
+<div class="container" style="margin-bottom:10rem; ">
 <div class="container my-5 col-lg-8" id="donation-id">
 <div class="row justify-content-center">
-  <div class="col-md-6">
-    <div class="card" style="width: 20rem">
+  <div class="col-md-6 mb-4">
+    <div class="card card-cara-bayar" style="width: 20rem">
    <div class="card-header">ATM TRANSFER</div>
    <ul class="list-group list-group-flush">
      <li class="list-group-item">
@@ -25,8 +25,8 @@
    </ul>
  </div>
   </div>
-<div class="col-md-6">
-  <div class="card" style="width: 20rem">
+<div class="col-md-6 mb-3">
+  <div class="card  card-cara-bayar" style="width: 20rem">
   <div class="card-header">E-Wallet</div>
   <ul class="list-group list-group-flush">
    <li class="list-group-item">

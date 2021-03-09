@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container">
+<div class="container mt-8">
 <div class="row justify-content-center">
-   <div class="col-md-6">
-       <div class="card" style="margin-bottom:10rem;margin-top:10rem;">
+   <div class="col-md-6 mb-5">
+       <div class="card">
            <div class="card-header bg-danger text-white text-left text-weight-bold">Login </div>
 
            <div class="card-body">

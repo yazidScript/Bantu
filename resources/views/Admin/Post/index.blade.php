@@ -8,7 +8,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Daftar Berita</h3>
-                <form class="card-tools ml-3" method="get" action="/post">
+                <!-- <form class="card-tools ml-3" method="get" action="/post">
                     <div class="input-group input-group-sm" style="width: 150px;">
                       <input type="text" name="cari" class="form-control float-right" placeholder="Cari Berita">
 
@@ -16,7 +16,7 @@
                         <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                       </div>
                     </div>
-                  </form>
+                  </form> -->
                 <div class="card-tools">
                   <div class="right">
                       <a href="{{Route('post.create')}}"><i class="fas fa-plus"></i></a>
@@ -28,15 +28,15 @@
                 <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th>#</th>
+                      <th>ID Berita</th>
                       <th>Thumbnail</th>
                       <th>Title</th>
-                      <th>Slug</th>
                       <th>kategori</th>
                       <th>Kecamatan</th>
                       <th>Content</th>
+                      <th>Jumlah Donatur</th>
                       <th>Jumlah Sekarang</th>
-                      <th></th>
+                      <th>Action</th>
                     </tr>
                   </thead>
 
@@ -46,19 +46,19 @@
                        <td>{{$data->id}}</td>
                         <td><a data-fancybox="gallery" href="../images/{{ $data->thumbnail }}"><img src="../images/{{ $data->thumbnail }}" class="ml-4" width="60px" height="60px"></td>
                         <td>{{$data->title}}</td>
-                        <td>{{$data->slug}}</td>
                         <td>{{$data->kategori}}</td>
                         <td>{{$data->kecamatan}}</td>
-                        <td>{{ str_limit(strip_tags($data->content),150)}}</td>
+                        <td>{{ \Illuminate\Support\Str::limit(strip_tags($data->content),150)}}</td>
+                        <td>{{ $data->total_donatur }}</td>
                         <td><p class="text-danger">Rp.{{number_format ($data->jumlah_sekarang)}}</p></td>
-                        <td><a href="{{Route('donasi.single.post',$data->slug)}}" class="btn btn-sm btn-info">Detail</a><td>
+                        <td><a href="/show/{{$data->slug}}" class="btn btn-sm btn-info">Detail</a><td>
                       </td>
                     </tr>
                     @endforeach
                   </tbody>
 
                 </table>
-              
+
               </div>
               <!-- /.card-body -->
             </div>

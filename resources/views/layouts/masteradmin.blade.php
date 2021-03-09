@@ -42,7 +42,7 @@
   <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
     aria-haspopup="true" aria-expanded="false">
-    <i class="fas fa-user"></i>
+    <i>{{ Session::get('admin') }}</i>
   </a>
   <div class="dropdown-menu dropdown-menu-right dropdown-default"
     aria-labelledby="navbarDropdownMenuLink-333">
@@ -96,7 +96,7 @@
           </a>
         </li>
         <li class="nav-item has-treeview">
-          <a href="/post" class="nav-link">
+          <a href="/dashboard/post" class="nav-link">
             <i class="nav-icon fas fa-edit"></i>
             <p>
                Post Berita
@@ -134,7 +134,10 @@
 <script src="/Admin/js/demo.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="{{asset('js/ckeditor.js')}}"></script>
+<!-- <script src="{{asset('js/ckeditor.js')}}"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 
 <script>
 @if(Session::has('sukses'))

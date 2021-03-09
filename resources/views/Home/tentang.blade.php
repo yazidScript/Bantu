@@ -1,10 +1,6 @@
 @extends('layouts.master')
 @section('content')
 
-<header>
-  <div class="'banner'" style="height:100px">
-  </div>
-</header>
 @if ($message = Session::get('success'))
 	  <div class="alert alert-success">
 		<button type="button" class="close" data-dismiss="alert">×</button>

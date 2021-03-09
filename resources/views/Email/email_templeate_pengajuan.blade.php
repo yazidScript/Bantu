@@ -39,7 +39,6 @@
       <div class="box">
           <td class="ml-5">
           <p>Nama Pengaju Bantuan : <strong>{{$nama}}</strong></p>
-          <strong>Keterangan : </strong>
                    <p>Hi, {{$nama}} <br>
                      {!! $email_body !!}</p>
                 <span style="text-align: center; font-family: sans-serif; font-weight: lightgrey" >

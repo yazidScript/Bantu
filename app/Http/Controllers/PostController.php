@@ -14,16 +14,14 @@ class PostController extends Controller
 
    public function index(Request $request)
    {
-     if ($request->has('cari')) {
-         $posts = Post::where('title','LIKE','%' .$request->cari. '%')->get();
-     }else {
-       $posts = Post::all();
-       $users = User::all();
-     }
+     $posts = Post::latest()->get();
+     $users = User::latest()->get();
+
+     // $jml_donate = DB::table('posts')->get();
 
       return view ('Admin.Post.index',compact('posts'));
    }
-   public function singlepost($slug)
+   public function show($slug)
    {
      $post = Post::where('slug' , '=' , $slug)->first();
      return view('Admin.Post.show',compact(['post']));
@@ -39,19 +37,28 @@ class PostController extends Controller
 
    public function store(Request $request)
    {
+     $request->validate([
+       'title' => 'required',
+       'penerima' => 'required',
+       'content' => 'required',
+       'thumbnail' => 'required'
+    ]);
+
      $filename = time() . '.' . $request->file('thumbnail')->getClientOriginalExtension();
      $request->file('thumbnail')->move('images', $filename);
      $post = Post::create([
        'user_id' => '1',
        'jumlah_sekarang' => 0,
+       'total_donatur' => 0,
        'penerima' => $request->penerima,
+       'slug' => $request->slug,
        'title' =>$request->title,
        'kecamatan' => $request->option,
        'kategori'  => $request->optionkat,
        'content' => $request->content,
        'thumbnail' => $filename
      ]);
-    return redirect('/post')->with('sukses','Data Post Berhasil Dibuat');
+    return redirect('/dashboard/post')->with('sukses','Data Post Berhasil Dibuat');
    }
    public function edit($slug)
    {
@@ -62,19 +69,43 @@ class PostController extends Controller
    }
    public function update(Request $request,$id)
    {
-    $post = Post::find($id);
-    $post->update($request->all());
-     if ($request->hasFile('thumbnail')) {
-        $request->file('thumbnail')->move('images/',$request->file('thumbnail')->getClientOriginalExtension());
-        $post->thumbnail = $request->file('thumbnail')->getClientOriginalName();
-        $post->save();
-     }
-     return redirect('/post')->with('sukses','sukses data berhasil di update');
+      $request->validate([
+        'title' => 'required',
+        'penerima' => 'required',
+        'content' => 'required'
+     ]);
+
+      $new_image = $request->new_image;
+      $old_image = $request->old_image;
+      if(!isset($new_image)){
+        DB::table('posts')->where('id',$id)->update([
+          'title' => $request->title,
+          'slug' => $request->slug,
+          'penerima' => $request->penerima,
+          'kecamatan' => $request->option,
+          'kategori'  => $request->optionkat,
+          'content' => $request->content,
+          'thumbnail' =>$old_image
+            ]);
+      }else{
+        $filename = time() . '.' . $request->file('new_image')->getClientOriginalExtension();
+        $request->file('new_image')->move('images/', $filename);
+        DB::table('posts')->where('id',$id)->update([
+          'title' => $request->title,
+          'slug' => $request->slug,
+          'penerima' => $request->penerima,
+          'kecamatan' => $request->option,
+          'kategori'  => $request->optionkat,
+          'content' => $request->content,
+          'thumbnail' => $filename
+            ]);
+      }
+     return redirect('/dashboard/post')->with('sukses','sukses data berhasil di update');
    }
    public function delete($slug)
    {
      Post::where('slug',$slug)->delete();
-     return redirect('/post')->with('sukses','Data Post Berhasil Dihapus');
+     return redirect('/dashboard/post')->with('sukses','Data Post Berhasil Dihapus');
    }
    // public function srcThumbnail($imagename){
    //      $path = storage_path('product_images/'.$imagename);

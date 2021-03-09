@@ -29,58 +29,46 @@ Route::get('/login','AuthController@login')->name('login');
 Route::post('/postlogin','AuthController@postlogin');
 Route::get('/logout','AuthController@logout');
 
+Route::get('/detail/post/{slug}', 'FrontController@detailpost');
+
+// Route::middleware('auth')->group(function(){
+  //Admin Panel
+  Route::get('/dashboard/post','PostController@index');
+  Route::get('donatur/export/', 'AdminController@export');
+  Route::get('/dashboard','AdminController@dashboard');
+  Route::get('/dashboard/donatur','AdminController@donatur');
+  Route::get('/delete/{id}/donatur', 'AdminController@deletedonatur');
+  Route::get('/dashboard/pengajuan','AdminController@pengajuan');
+  Route::post('/post/{id}/update','PostController@update');
+  Route::get('/delete/{id}/pengajuan','AdminController@deletepengajuan');
+  Route::get('/jumlah','AdminController@jumlahdonasi');
+  Route::get('/dashboard/statusditerima','AdminController@statusditerima');
+  Route::get('/donatur/{id}/sendemail','AdminController@sendemail');
+  Route::get('/pengajuan/send','AdminController@pengajuanemail');
+  Route::post('/pengajuan/send','AdminController@pengajuansend')->name('send.pengajuan');
+  
 
 
-//Admin Panel
-Route::get('/post','PostController@index');
-Route::get('donatur/export/', 'AdminController@export');
-Route::get('/dashboard','AdminController@dashboard');
-Route::get('/dashboard/donatur','AdminController@donatur');
-Route::get('/delete/{id}/donatur', 'AdminController@deletedonatur');
-Route::get('/dashboard/pengajuan','AdminController@pengajuan');
-Route::post('/post/{id}/update','PostController@update');
-Route::get('/delete/{id}/pengajuan','AdminController@deletepengajuan');
-Route::get('/jumlah','AdminController@jumlahdonasi');
-Route::get('/dashboard/statusditerima','AdminController@statusditerima');
-Route::get('/donatur/{id}/sendemail','AdminController@sendemail');
-Route::get('/pengajuan/send','AdminController@pengajuanemail');
-Route::post('/pengajuan/send','AdminController@pengajuansend')->name('send.pengajuan');
-Route::get('/thumbnail/{$filename}','PostController@srcThumbnail');
+  //POST Admin
+  Route::get('/show/{slug}','PostController@show');
 
-
-//POST Admin
-Route::get('/{slug}',[
-
-     'uses' => 'PostController@singlepost',
-     'as'   => 'donasi.single.post'
-]);
-Route::get('/post/create',[
-     'uses' => 'PostController@create',
-     'as'   => 'post.create'
-]);
-Route::post('/post/store',[
-     'uses' => 'PostController@store',
-     'as'   => 'post.store'
-]);
-Route::get('/post/{slug}/edit',[
-     'uses' => 'PostController@edit',
-     'as'   => 'post.edit'
-]);
-Route::post('/post/{slug}/update',[
-     'uses' => 'PostController@update',
-     'as'   => 'post.update'
-]);
-Route::get('/delete/{slug}',[
-     'uses' => 'PostController@delete',
-     'as'   => 'delete.post'
-]);
-//post User
-Route::get('/beranda/{slug}',[
-
-     'uses' => 'FrontController@detailpost',
-     'as'   => 'detail.post'
-]);
-
-// Route::group(['middleware' => ['auth','CheckRole:admin']],function(){
-//
-// });
+  Route::get('/post/create',[
+       'uses' => 'PostController@create',
+       'as'   => 'post.create'
+  ]);
+  Route::post('/post/store',[
+       'uses' => 'PostController@store',
+       'as'   => 'post.store'
+  ]);
+  Route::get('/post/{slug}/edit',[
+       'uses' => 'PostController@edit',
+       'as'   => 'post.edit'
+  ]);
+  Route::post('/post/{slug}/update',[
+       'uses' => 'PostController@update',
+       'as'   => 'post.update'
+  ]);
+  Route::get('/delete/{slug}',[
+       'uses' => 'PostController@delete',
+       'as'   => 'delete.post'
+  ]);

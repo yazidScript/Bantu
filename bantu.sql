@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2021 at 07:25 AM
+-- Generation Time: Feb 27, 2021 at 09:12 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -40,15 +40,6 @@ CREATE TABLE `donatur` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `donatur`
---
-
-INSERT INTO `donatur` (`id`, `post_id`, `email`, `notlp`, `namalengkap`, `metodebayar`, `nominal`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'arif@gmail.com', '089765432123', 'Arif Dewangga', 'BRI', 20000, 'Di terima', NULL, NULL),
-(2, 1, 'arifdewangga2@gmail.com', '098765432123', 'Arif Dewangga', 'BRI', 10000, 'Di terima', NULL, NULL),
-(3, 1, 'yazid@gmail.com', '098765432121', 'Yazid', 'BRI', 20000, 'Belum diterima', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -182,13 +173,6 @@ CREATE TABLE `pengajuan` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `pengajuan`
---
-
-INSERT INTO `pengajuan` (`id`, `email`, `notlp`, `namalengkap`, `tanggal`, `alamat`, `gambar`, `created_at`, `updated_at`) VALUES
-(1, 'arif@gmail.com', '086754321234', 'Yazid', '2021-02-24', 'Dawe', '1614232438.jpeg', NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -215,7 +199,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `user_id`, `penerima`, `kategori`, `kecamatan`, `title`, `content`, `slug`, `thumbnail`, `jumlah_sekarang`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Pak Kepala Desa', 'Bencana Alam', 'Gebog', 'Longsor Terjang Kudus, 2 Rumah Rusak-6 Titik Jalan Sempat Tertutup', '<p><strong>Kudus</strong> - Hujan deras sejak tadi malam menyebabkan <a href=\"https://www.detik.com/tag/longsor\">longsor</a> di Desa Menawan, Kecamatan Gebog, Kabupaten <a href=\"https://www.detik.com/tag/kudus\">Kudus</a>, Jawa Tengah. Dua rumah warga mengalami rusak dan enam titik jalan desa tertutup longsor.</p><p>Pantauan di lokasi rumah pertama milik Budi Santoso di RT 1 RW 6. Rumah miliknya mengalami kerusakan pada ruang tamu dan teras rumah. Longsoran tanah berasal dari tebing ketinggian 50 meter.</p><p>\"Rusak teras ruang tamu. Kejadian 3.00 WIB dini hari tadi. Ini kita mulai melakukan bersih-bersih sisa longsor. Tidak ada korban jiwa,\" kata Budi ditemui di lokasi, Rabu (24/2/2021).</p><p>Sedangkan satu rumah lainnya milik Hadi Sampurna. Hadi menceritakan <a href=\"https://www.detik.com/tag/longsor\">longsor</a> terjadi pada pukul 3.00 WIB dini hari tadi. Pada saat kejadian terdapat suara runtuhan dan secara cepat dinding rumah miliknya tertimpa longsor.</p><p>\"Hujan deras, terus ada batu turun dor gitu. Habis itu ada suara <i>reg</i>, saya lompat, ke tempat anak-anak kecil. Sudah tertimbun batu yang turun sudah di atas anak saya. Anak saya kecil tertimbun runtuhan bata-bata longsor,\" terang Hadi ditemui di lokasi pagi ini.</p><p>Hadi mengungkap anaknya sempat tertimbun tanah longsor. Setelah dievakuasi, anaknya tak mengalami luka.</p><p>\"Hati saya gimana, mati apa gimana. <i>Guh-guh</i>, itu sudah ada pasir sembarang di kepalanya. Saya tarik sudah <i>jagongi</i> (panggil). Katanya lemas, tidak ada yang luka sehat semuanya,\" ujar dia.</p><p>\"Yang rusak itu ruang tidur sampa dapur itu rusak parah,\" sambung Hadi.</p><p>Staf BPBD Kudus, Johan, mengatakan ada delapan titik <a href=\"https://www.detik.com/tag/longsor\">longsor</a> di Desa Menawan. Longsor terjadi pada pukul 03.00 WIB. Longsor terjadi karena curah hujan lebat di wilayah Desa Menawan.</p><p>\"Delapan titik longsor, rumahnya dua. Jalan enam titik yang dua titik rumah. Kerugian Rp 15 juta per rumah. Korban jiwa tidak. Hanya luka ringan anaknya pak Hadi,\" ujar dia ditemui di lokasi pagi ini.</p><p>Informasi dihimpun longsor juga terjadi di Desa Rahtawu Kecamatan Gebog. Longsor menutup jalan desa. Tidak ada korban jiwa dalam kejadian tersebut.</p>', 'longsor-terjang-kudus-2-rumah-rusak-6-titik-jalan-sempat-tertutup', '1614231476.jpeg', 90000, '2021-02-25 13:37:56', '2021-02-25 05:37:56');
+(1, 1, 'ada deh', 'Bencana Alam', 'Kaliwungu', 'Longsor Terjang Kudus', '<p>aaaaa</p>', 'longsor-terjang-kudus', '1614412987.jpg', 0, '2021-02-27 15:37:38', '2021-02-27 07:37:38');
 
 -- --------------------------------------------------------
 
@@ -309,7 +293,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `donatur`
 --
 ALTER TABLE `donatur`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `kategory`
@@ -339,7 +323,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pengajuan`
 --
 ALTER TABLE `pengajuan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `posts`

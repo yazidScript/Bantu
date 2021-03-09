@@ -4,7 +4,7 @@
 <div class="container">
 <div class="container my-5" id="donation-id">
 <div class="row justify-content-center">
-   <div class="col-md-8 mt-5">
+   <div class="col-md-8 mb-5">
       <div class="card-header bg-info text-white text-left mb-2 br-3">Cara pembayaran, bisa dilihat di <a href="/cara-bayar" style="text-decoration:none;" class="text-white">SINI <span>&rarr;</span> </a></div>
        <div class="card">
            <div class="card-header bg-danger text-white text-left">Donasi</div>

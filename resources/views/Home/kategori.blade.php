@@ -29,12 +29,12 @@
         <div class="py-3 col-md-4">
           <div class="card" style="height: 100%;">
             <div class="post-img-wrapper">
-              <img src="../images/{{ $data->thumbnail()}}"class="card-img-top" style="height: 100%;" alt="..."/>
+              <img src="/images/{{ $data->thumbnail}}"class="card-img-top" style="height: 100%;" alt="..."/>
             </div>
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">{{$data->title}}</h5>
               <p class="card-text">
-              {{ str_limit(strip_tags($data->content),150)}} <a href="{{Route('detail.post',$data->slug)}}" class="text-danger">Read More</a>
+                {{ \Illuminate\Support\Str::limit(strip_tags($data->content),150)}} <a href="/detail/post/{{$data->slug}}" class="text-danger">Read More</a>
               </p>
               <button class="card-btn"><a href="/donation/{{$data->id}}/donation-check" style="text-decoration:none;">Donasi Sekarang </a><span>&rarr;</span></button>
             </div>

@@ -18,6 +18,13 @@
                      </div>
                      <span style="color:red; margin-left: 240px">{{ $errors->first('title') }}</span>
                  </div>
+                 <!-- <div class="form-group row">
+                     <label for="slug" class="col-md-4 col-form-label text-md-right" id="slug">Slug (Sesuai title)</label>
+                     <div class="col-md-6">
+                     <input name="slug" type="text" class="form-control" id="slug"  value="{{ old('title') }}" placeholder="slug-nama-berita">
+                     </div>
+                     <span style="color:red; margin-left: 240px">{{ $errors->first('slug') }}</span>
+                 </div> -->
                  <div class="form-group row">
                      <label for="penerima" class="col-md-4 col-form-label text-md-right" id="title">Penerima</label>
                      <div class="col-md-6">
@@ -69,10 +76,14 @@
 @section('footer')
 
 <script>
-    ClassicEditor
-        .create( document.querySelector( '#content' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+  var options = {
+    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+  };
+</script>
+<script>
+    CKEDITOR.replace( 'content',options);
 </script>
 @stop

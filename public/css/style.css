@@ -1,3 +1,6 @@
+h1{
+  font-weight: bold;
+}
 .nav-item {
   color: #000;
 }
@@ -7,7 +10,7 @@
 }
 header .banner{
   background: #f7f7e8;
-  height: 500px;
+  height: 400px;
   padding: 2.5rem 0;
   width: 100%;
 }
@@ -27,12 +30,21 @@ header .banner img{
 }
 header .banner h1{
 color:  #E40B0B;
- text-align: right;
-  font-size: 70px;
+font-size: 5vmax!important;
 }
 
 header .banner p{
   text-align: right;
+}
+
+.row{
+  align-items: stretch;
+  justify-content: stretch
+}
+
+.row .card{
+  height: 100%;
+  align-content: space-between;
 }
 
 .card img{
@@ -104,23 +116,28 @@ header .banner p{
   cursor: zoom-out;
 }
 /* RESPONSIVE */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 680px) {
   /* For mobile phones: */
    body{
      width: 100%;
    }
+   .banner img{
+     display: none;
+   }
    header .banner{
      width: 100%;
+     height: 300px;
    }
-   header .banner h1{
-     color:  #E40B0B;
-     text-align: right;
-     font-size: 50px;
-   }
-   header .banner a{
-     margin: auto;
+   header .banner .desc{
      display: flex;
-     align-items: flex-end;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     flex: 1;
+     padding: 0 2rem
+   }
+   header .banner p{
+     text-align: center
    }
    .donasi-judul h1{
      width: 100%;
@@ -130,24 +147,34 @@ header .banner p{
      padding-top: 2rem;
      padding-bottom: 2px;
    }
-   .kecamatan{
-    display: block;
-   }
+   .kategori .card{
+       margin-bottom: 3px;
+  }
+
+  .card-cara-bayar{
+    width: 100%!important;
+  }
   #card-donasi{
     display: inline-block;
   }
   .carousel-slide{
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
   .carousel-slide img{
     margin-bottom: 5px;
-    height: 200px;
+    height: 230px;
     border-radius: 16px;
+  }
+  .donasi-detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .donasi-detail .img-detail img{
     align-items: center;
     justify-content: center;
     max-width: 100%;
+    text-align: center;
   }
   .donasi-detail-body {
     width: 100%;
@@ -155,5 +182,20 @@ header .banner p{
   .donasi-detail-title{
     width: 100%;
     font-size: 30px;
+  }
+  .donasi-detail__sidebar{
+    position: fixed;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    right: 1.5rem;
+
+  }
+  .donasi-detail__sidebar .text-center{
+    display: none
+  }
+  .donasi-share-wa, .donasi-share-fb{
+
   }
 }

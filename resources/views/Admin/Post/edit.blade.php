@@ -18,6 +18,13 @@
                      <span style="color:red; margin-left: 240px">{{ $errors->first('title') }}</span>
                  </div>
                  <div class="form-group row">
+                     <label for="slug" class="col-md-4 col-form-label text-md-right" id="slug">Slug (Sesuai title)</label>
+                     <div class="col-md-6">
+                     <input name="slug" type="text" class="form-control" id="slug" value="{{ $p->slug }}" placeholder="slug-nama-berita">
+                     </div>
+                     <span style="color:red; margin-left: 240px">{{ $errors->first('slug') }}</span>
+                 </div>
+                 <div class="form-group row">
                      <label for="penerima" class="col-md-4 col-form-label text-md-right" id="title">Penerima</label>
                      <div class="col-md-6">
                      <input name="penerima" type="text" class="form-control" id="penerima" value="{{ $p->penerima }}">
@@ -46,17 +53,16 @@
                  </div>
                  <div class="form-group row">
                      <label for="thumbnail" class="col-md-4 col-form-label text-md-right">Thumbnail</label>
-                     <div class="col-md-6">
-                     <input name="thumbnail" type="file" class="form-control" value="{{ $p->thumbnail }}" id="thumbnail" required>
+                     <div class="col-md-4">
+                       <input type="file" name="new_image" />
+                        <img class="img-thumbnail mt-4 " style="width= "100;""  src=" {{url('/images/'."$p->thumbnail")}}"/>
+                        <input type="hidden" name="old_image" value="{{ $p->thumbnail }}" />
                      </div>
-                     <span style="color:red; margin-left: 240px">{{ $errors->first('thumbnail') }}</span>
+                     <span style="color:red;">{{ $errors->first('thumbnail') }}</span>
                  </div>
                  <div class="form-group">
                         <label>Content Berita</label>
                         <textarea name="content" class="form-control" rows="3" id="content" value="">{{ $p->content }}</textarea>
-                        <script type='text/javascript'>
-                           CKEDITOR.replaceAll('content');
-                        </script>
                       </div>
                  <div class="text-center">
                          <button class="btn btn-primary btn-warning my-4 mx-auto col-md-10" type="submit">Edit</button>
@@ -70,6 +76,17 @@
 </div>
 @stop
 @section('footer')
+<script>
+  var options = {
+    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+  };
+</script>
+<script>
+    CKEDITOR.replace( 'content',options);
+</script>
 
 <script>
     ClassicEditor

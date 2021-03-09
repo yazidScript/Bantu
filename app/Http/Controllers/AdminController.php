@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Donatur;
 use App\Pengajuan;
 use App\Post;
+use Session;
 use DB,Hash;
 
 class AdminController extends Controller
@@ -20,7 +21,11 @@ class AdminController extends Controller
     public function dashboard()
     {
 
-      return view('Admin.dashboard');
+      if(!Session::has('admin')){
+        return back();
+      }else{
+        return view('Admin.dashboard');
+      }
     }
 
     public function donatur(Request $request)
@@ -28,7 +33,7 @@ class AdminController extends Controller
       if ($request->has('cari')) {
          $donatur = Donatur::where('namalengkap','LIKE','%' .$request->cari. '%')->get();
       }else {
-          $donatur = Donatur::all();
+          $donatur = Donatur::latest()->get();
       }
 
       return view('Admin.Donatur.index',compact('donatur'));

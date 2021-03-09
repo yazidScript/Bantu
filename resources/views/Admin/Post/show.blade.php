@@ -35,7 +35,7 @@
                 <b class="font-weight-bold">Conten Berita</b> <a class="float-right">{!! $post->content!!}</a>
               </li>
             </ul>
-            <a href="/post" class="text-primary" ><b>Kembali</b></a>
+            <a href="/dashboard/post" class="text-primary" ><b>Kembali</b></a>
             <div class="d-inline" style="margin-right:auto; float:right;">
                 <a href="{{Route('post.edit',$post->slug)}}" class="btn btn-warning btn-sm ml-2 text-white" ><b>edit</b></a>
                 <a class="btn btn-danger btn-sm ml-2 text-white" data-toggle="modal" data-target="#exampleModal" ><b>Delete</b></a>

@@ -36,11 +36,4 @@ class Post extends Model
     return $this->belongsTo(Donatur::class);
   }
 
-  public function thumbnail()
-  {
-    if (!$this->thumbnail) {
-       return asset('no-image.png');
-    }
-    return $this->thumbnail;
-  }
 }

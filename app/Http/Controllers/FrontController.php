@@ -83,7 +83,7 @@ class FrontController extends Controller
 }
    public function donation(Request $request,$id)
    {
-     $post = Post::find($id);
+     $post = Post::findOrFail($id);
      $metodebayar = MetodeBayar::all();
      return view('Home.Donation',['post' => $post,'metodebayar'=> $metodebayar]);
    }
@@ -117,7 +117,18 @@ class FrontController extends Controller
       $v = $e->nama;
       $vv = $e->nomor;
     }
-    return view('Home.bayar-check',['nama' => $v,'nomor' => $vv,'nominal' => $nmnl])->with(['success' => 'Donasi Berhasil DiKirim']);;
+
+
+    $total_donatur = DB::table('posts')->where('id', request('post_id'))->first();
+
+    if($total_donatur){
+      $jml_donate = $total_donatur->total_donatur += 1;
+      DB::table('posts')->where('id', request('post_id'))->update([
+        'total_donatur' => $jml_donate
+      ]);
+    }
+
+    return view('Home.bayar-check',['nama' => $v,'nomor' => $vv,'nominal' => $nmnl])->with(['success' => 'Donasi Berhasil Di Kirim']);;
    }
 
 
@@ -136,11 +147,22 @@ class FrontController extends Controller
      return view('Home.bayar-check');
    }
 
-   public function detailpost(Request $request ,$slug)
+   public function detailpost($slug)
    {
-     $post = Post::all()->take(3);
-     $post = Post::where('slug' , '=' , $slug)->first();
-     return view('Home.show',['post' => $post]);
+
+     $data_post = Post::all()->take(3);
+
+     $post = Post::where('slug',  $slug)->first();
+
+     foreach ($data_post as $key => $item) {
+       if($slug !== $item->slug){
+         $data_post[] = $item;
+       }
+     }
+
+     // dd($data_post);
+
+     return view('Home.show', compact('data_post','post'));
    }
 
 
