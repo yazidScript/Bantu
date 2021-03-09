@@ -23,7 +23,7 @@
                       </div>
                   </div>
                   <div class="col-12 col-md col-md">
-                      <h1 class="title">Semangat Kudus Bisa</h1>
+                      <h1 class="title mt-4">Semangat Kudus Bisa</h1>
                       <div class="mb-2 mb-md-4">
                           Kudus Bisa<br />
                           Saat ini Indonesia dalam posisi tanggap darurat bencana alam dan pandemi covid-19.<br />
