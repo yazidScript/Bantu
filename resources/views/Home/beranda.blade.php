@@ -8,7 +8,7 @@
           <div class="desc">
             <h1 class="banner-text"style="font-weight:bold;">#JAGA KUDUS</h1>
             <p>Donasikan sedikit uang anda untuk warga yang terkena bencana</p>
-            <a href="/berita" class="btn text-white" style="background-color:#E40B0B; text-transform:inherit;">Donasi Yuk</a>
+            <a href="/berita" class="btn text-white" style="background-color:#E40B0B; text-transform:inherit; border-radius: 6rem;">Donasi Yuk</a>
           </div>
     </div>
   </div>

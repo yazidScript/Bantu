@@ -18,18 +18,38 @@ class AdminController extends Controller
   protected $receive_person = "";
   protected $pesan = [];
 
+  public function check_logged(){
+    if(!Session::has('admin')){
+      return true;
+    }
+  }
+
     public function dashboard()
     {
-
+      $jumlah_sekarang = Post::all();
       if(!Session::has('admin')){
         return back();
       }else{
-        return view('Admin.dashboard');
+
+        $donatur = Donatur::get();
+        $total_saldo = 0;
+
+        foreach ($donatur as $key => $saldo) {
+          $total_saldo += $saldo->nominal;
+        }
+
+        return view('admin.dashboard', compact('total_saldo'));
+
       }
+
     }
 
     public function donatur(Request $request)
     {
+      if(Self::check_logged()){
+        return redirect()->back();
+      }
+
       if ($request->has('cari')) {
          $donatur = Donatur::where('namalengkap','LIKE','%' .$request->cari. '%')->get();
       }else {
@@ -45,18 +65,30 @@ class AdminController extends Controller
 
    public function deletedonatur($id)
    {
+     if(Self::check_logged()){
+       return redirect()->back();
+     }
+
      Donatur::where('id',$id)->delete();
      return redirect('/dashboard/donatur')->with('sukses','Data Donatur Berhasil Dihapus');
    }
 
    public function pengajuan(Request $request)
    {
+     if(Self::check_logged()){
+       return redirect()->back();
+     }
+
     $pengajuan = Pengajuan::all();
      return view('Admin.pengajuan',compact('pengajuan'));
    }
 
    public function deletepengajuan($id)
    {
+     if(Self::check_logged()){
+       return redirect()->back();
+     }
+
      Pengajuan::where('id',$id)->delete();
      return redirect('/dashboard/pengajuan')->with('sukses','Data Pengajuan Berhasil Dihapus');
    }
@@ -96,6 +128,10 @@ class AdminController extends Controller
 /// Pengajuan Send Emnail
       public function pengajuansend(Request $request)
       {
+        if(Self::check_logged()){
+          return redirect()->back();
+        }
+        
         /// Siapkan Data
          $email = $request->email;
          $data =  array(

@@ -26,7 +26,7 @@ class AuthController extends Controller
 
         Session::put('admin', $admin->name);
 
-        return view('Admin.dashboard', compact('admin'))->with('suksess','Login Admin Berhasil');
+        return redirect('/admin/dashboard')->with('suksess','Login Admin Berhasil');
       }
       // if (Auth::attempt(['email' => $email, 'password' => $password])) {
       // }

@@ -11,6 +11,9 @@
                 <b class="font-weight-bold">Jumlah Donasi - Sekarang</b> <h class="float-right text-danger"><td>Rp.{{number_format ($post->jumlah_sekarang)}}</td></h>
               </li>
               <li class="list-group-item">
+                <b class="font-weight-bold">Jumlah Donatur Yang Berdonasi</b> <h class="float-right"><td>{{$post->total_donatur}}</td></h>
+              </li>
+              <li class="list-group-item">
                 <b class="font-weight-bold">Dibuat Oleh</b> <a class="float-right">{{$post->user->name}}</a>
               </li>
               <li class="list-group-item">

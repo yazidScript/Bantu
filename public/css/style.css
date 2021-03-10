@@ -102,7 +102,7 @@ header .banner p{
 .carousel-slide{
   width: 100%;
 }
-.carousel-slide img{
+.carousel-item img{
   margin: auto;
   border-style: none;
   object-fit: cover;

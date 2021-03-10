@@ -14,7 +14,7 @@
               <div class="icon">
                 <i class="fas fa-book"></i>
               </div>
-              <a href="/post" class="small-box-footer">
+              <a href="/dashboard/post" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -66,6 +66,22 @@
                 <i class="fas fa-chart-pie"></i>
               </div>
               <a href="/dashboard/pengajuan" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>Rp.{{number_format ($total_saldo)}}</h3>
+                <p>Total Saldo</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-stats-bars"></i>
+              </div>
+              <a href="/dashboard/post" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>

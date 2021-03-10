@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-<div class="container" style="margin-top:100px;">
+<div class="container">
 
   <section class="c-section donasi-detail">
       <div class="row">
@@ -77,8 +77,8 @@
             </div>
           </div>
           <div class="row">
-            @foreach ($data_post as $key => $data)
-            @if($key !== 3)
+            @foreach ($feed_post as $key => $data)
+            @if($key < 4)
             <div class="py-3 col-md-4">
               <div class="card" >
                 <img src="/images/{{ $data->thumbnail }}" class="card-img-top" alt="thumbnail">

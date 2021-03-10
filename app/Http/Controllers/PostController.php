@@ -9,11 +9,22 @@ use App\Post;
 use App\User;
 use DB,Hash;
 use update;
+use Session;
 class PostController extends Controller
 {
 
+  public function check_logged(){
+    if(!Session::has('admin')){
+      return true;
+    }
+  }
+
    public function index(Request $request)
    {
+     if(Self::check_logged()){
+       return redirect()->back();
+     }
+
      $posts = Post::latest()->get();
      $users = User::latest()->get();
 
@@ -23,12 +34,19 @@ class PostController extends Controller
    }
    public function show($slug)
    {
+     if(Self::check_logged()){
+       return redirect()->back();
+     }
+
      $post = Post::where('slug' , '=' , $slug)->first();
      return view('Admin.Post.show',compact(['post']));
    }
 
    public function create()
    {
+     if(Self::check_logged()){
+       return redirect()->back();
+     }
 
      $kategori = Kategory::all();
      $kecamatan = Kecamatan::all();
@@ -37,12 +55,17 @@ class PostController extends Controller
 
    public function store(Request $request)
    {
+     if(Self::check_logged()){
+       return redirect()->back();
+     }
+
      $request->validate([
        'title' => 'required',
        'penerima' => 'required',
        'content' => 'required',
        'thumbnail' => 'required'
     ]);
+
 
      $filename = time() . '.' . $request->file('thumbnail')->getClientOriginalExtension();
      $request->file('thumbnail')->move('images', $filename);
@@ -62,6 +85,10 @@ class PostController extends Controller
    }
    public function edit($slug)
    {
+     if(Self::check_logged()){
+       return redirect()->back();
+     }
+
      $post = DB::table('posts')->where('slug',$slug)->get();
      $kecamatan = Kecamatan::all();
      $kategori = Kategory::all();
@@ -69,6 +96,10 @@ class PostController extends Controller
    }
    public function update(Request $request,$id)
    {
+     if(Self::check_logged()){
+       return redirect()->back();
+     }
+
       $request->validate([
         'title' => 'required',
         'penerima' => 'required',
@@ -104,6 +135,10 @@ class PostController extends Controller
    }
    public function delete($slug)
    {
+     if(Self::check_logged()){
+       return redirect()->back();
+     }
+
      Post::where('slug',$slug)->delete();
      return redirect('/dashboard/post')->with('sukses','Data Post Berhasil Dihapus');
    }

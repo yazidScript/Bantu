@@ -10,6 +10,7 @@ use App\Pengajuan;
 use App\Kategory;
 use App\Post;
 use PDF;
+use Str;
 use DB,Hash;
 
 class FrontController extends Controller
@@ -149,20 +150,18 @@ class FrontController extends Controller
 
    public function detailpost($slug)
    {
-
-     $data_post = Post::all()->take(3);
+     $data_post = Post::get();
+     $feed_post = [];
 
      $post = Post::where('slug',  $slug)->first();
 
      foreach ($data_post as $key => $item) {
-       if($slug !== $item->slug){
-         $data_post[] = $item;
+       if(Str::lower($slug) !== $item->slug){
+         $feed_post[] = $item;
        }
      }
 
-     // dd($data_post);
-
-     return view('Home.show', compact('data_post','post'));
+     return view('Home.show', compact('feed_post','post'));
    }
 
 

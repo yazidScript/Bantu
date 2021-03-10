@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('content')
-
-<div class="container" style="margin-top:5rem;">
+<div class="container" style="margin-top:2rem;">
 <div id="carouselExampleControls" class="carousel-slide" data-ride="carousel" style="">
  <div class="carousel-inner">
    <div class="carousel-item active">

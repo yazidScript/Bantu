@@ -15,7 +15,7 @@
                       <div class="row">
                           <div class="col-12">
                               <picture class="img-tentang">
-                                  <img alt="img tentang" class="col-12" src="/asset/gambar3.png">
+                                  <img alt="img-tentang" class="col-12 rounded" src="/asset/gambar3.png">
                                   <!-- <h1 style="font-size:30px; display:flex; justify-content: center;">Kudus Bisa !</h1> -->
                               </picture>
                               <div class="u-lazy__placeholder-2"></div>
@@ -26,16 +26,16 @@
                       <h1 class="title mt-4">Semangat Kudus Bisa</h1>
                       <div class="mb-2 mb-md-4">
                           Kudus Bisa<br />
-                          Saat ini Indonesia dalam posisi tanggap darurat bencana alam dan pandemi covid-19.<br />
-                          <br />
-                          Dikudus sekarang ini terjadi bencana alam banjir dan tanah longsor karna cuaca nya musim hujan.<br />
+                          Saat ini Indonesia dalam posisi tanggap darurat bencana alam dan pandemi covid-19.
+                          Dikudus sekarang ini terjadi bencana alam banjir dan tanah longsor karena cuaca nya musim hujan.<br />
                           Berita bencana untuk berdonasi masih banyak diberitakan disosial media seperti di Facebook.Masalah inilah yang membuat kami berfikir bagaimana orang melihat berita tersebut<br />
                           untuk berdonasi bukan hanya diberitakan di media sosial akan tetapi ada juga di website.<br />
                           <br />
-                          Akhirnya kami membuat website “KUDUS BISA” yaitu sebuah website untuk berdonasi membantu sesama yang sedang terkena musibah bencana dikota Kudus.<br />
-                          Kita ketik saja alamat URL nya kemudia kita masuk halaman beranda,dihalaman beranda tersebut kita bisa melihat berita sesuai dengan wilayah nya.kita juga bisa berdonasi lewat website dengan cara kita membuka berita tersebut kemudian kita bisa membaca berita tersebut dengan lengkap dan jelas setelah itu bisa berdonasi dengan mengisikan identitas yang ada di website nya dan bisa ditransfer ke rekening yang sudah disediakan kemudian setelah terkumpul nanti ada tim dari KUDUS BISA yang akan menyalurkan langsung ke tempat terjadinya bencana.<br />
+                          Akhirnya kami membuat website “KUDUS BISA” yaitu sebuah website untuk berdonasi membantu sesama yang sedang terkena musibah bencana dikota Kudus
+                          Kita ketik saja alamat URL nya kemudia kita masuk halaman berita kemudian kita bisa membaca berita tersebut dengan lengkap dan jelas setelah itu bisa berdonasi dengan mengisikan identitas yang sudah disediakan dan bisa ditransfer ke rekening sesuai pilihan anda,
+												  setelah terkumpul nanti ada tim dari KUDUS BISA yang akan menyalurkan langsung ke tempat terjadinya bencana.<br />
                           <br />
-                          Jadi,kita berdonasi tidak perlu ragu akan tertipu karna website kami resmi untuk menyalurkan bantuan bencana disekitar Kudus. <br />
+                          Jadi,kita berdonasi tidak perlu ragu akan tertipu karena website kami resmi untuk menyalurkan bantuan bencana disekitar Kudus. <br />
                           <br />
 
                       </div>
@@ -124,4 +124,14 @@
       </div>
     </div>
 
+@stop
+@section('footer')
+<script type="text/javascript">
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.mdb.modal', () => {
+  myInput.focus()
+})
+</script>
 @stop
