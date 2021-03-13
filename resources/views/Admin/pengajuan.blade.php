@@ -65,6 +65,7 @@
       </div>
       <!-- Button trigger modal -->
 
+
 @stop
 @section ('footer')
 <script>

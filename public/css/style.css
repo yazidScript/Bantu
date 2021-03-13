@@ -115,6 +115,11 @@ header .banner p{
 .card img:hover{
   cursor: zoom-out;
 }
+picture img{
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+}
 /* RESPONSIVE */
 @media only screen and (max-width: 680px) {
   /* For mobile phones: */
@@ -197,5 +202,10 @@ header .banner p{
   }
   .donasi-share-wa, .donasi-share-fb{
 
+  }
+  picture img{
+     padding: 0;
+     align-items: center;
+     justify-content: center;
   }
 }

@@ -56,7 +56,7 @@
 
     @yield( 'content' )
       <!-- Footer -->
-  <footer class="page-footer font-small unique-color-dark pt-4" style="font-family: sans-serif;">
+  <footer class="page-footer font-small unique-color-dark pt-4" style="font-family: sans-serif; ">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">

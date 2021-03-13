@@ -12,15 +12,15 @@
           <div class="container px-2 px-md-0">
               <div class="row align-items-center">
                   <div class="col-12 col-md order-md-2 col-md-3">
-                      <div class="row">
+
                           <div class="col-12">
                               <picture class="img-tentang">
-                                  <img alt="img-tentang" class="col-12 rounded" src="/asset/gambar3.png">
+                                  <img alt="img-tentang" src="/asset/gambar3.png">
                                   <!-- <h1 style="font-size:30px; display:flex; justify-content: center;">Kudus Bisa !</h1> -->
                               </picture>
                               <div class="u-lazy__placeholder-2"></div>
                           </div>
-                      </div>
+
                   </div>
                   <div class="col-12 col-md col-md">
                       <h1 class="title mt-4">Semangat Kudus Bisa</h1>
@@ -87,7 +87,7 @@
                   <input name="gambar" type="file" class="form-control" value="{{ old('gambar') }}" id="gambar" required>
                   <span  style="color:red;">{{ $errors->first('gambar') }}</span>
               </div>
-              <button type="submit" class="btn text-white" style="background-color:#E40B0B;">Kirim</button>
+              <button type="submit" class="btn text-white" style="background-color:#E40B0B; border-radius: 6rem;">Kirim</button>
             </form>
         </div>
           </div>

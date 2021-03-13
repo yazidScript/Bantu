@@ -65,6 +65,8 @@
             <!-- /.card -->
           </div>
         </div>
+
+
         <script src="/Admin/js/jquery.fancybox-1.3.4.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>

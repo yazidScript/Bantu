@@ -26,7 +26,7 @@ class FrontController extends Controller
    public function berita(Request $request)
    {
      $kat = Kategory::all();
-     $post = Post::all();
+     $post = Post::latest()->get();
      return view("Home.berita",compact('kat','post'));
    }
    public function kategori($kat)
