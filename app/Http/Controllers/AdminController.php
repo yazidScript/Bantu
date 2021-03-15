@@ -79,7 +79,7 @@ class AdminController extends Controller
        return redirect()->back();
      }
 
-    $pengajuan = Pengajuan::all();
+    $pengajuan = Pengajuan::latest()->get();
      return view('Admin.pengajuan',compact('pengajuan'));
    }
 
@@ -111,7 +111,7 @@ class AdminController extends Controller
     $donation = $receiver;
     try{
       Mail::send('Email.donation', array('donation' => $donation, 'posts' => $posts) , function($donation) use($id){
-        $donation->to($this->receive_person)->subject('Verifikasi Donatur');
+        $donation->to($this->receive_person)->subject('Terima Donasi');
         $donation->from(env('MAIL_USERNAME','teamskudusbisa.kds@gmail.com'),'Kudus Bisa');
       });
 
@@ -131,7 +131,7 @@ class AdminController extends Controller
         if(Self::check_logged()){
           return redirect()->back();
         }
-        
+
         /// Siapkan Data
          $email = $request->email;
          $data =  array(

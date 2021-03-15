@@ -1,6 +1,14 @@
 @extends('layouts.master')
 @section('content')
 
+
+@if ($message = Session::get('success'))
+	  <div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">×</button>
+		  <strong>{{ $message }}</strong>
+	  </div>
+	@endif
+
 <header>
   <div class="banner" style="padding-top: 100px;">
     <div class="container">

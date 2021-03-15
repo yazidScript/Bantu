@@ -13,9 +13,9 @@
               <div class="row align-items-center">
                   <div class="col-12 col-md order-md-2 col-md-3">
 
-                          <div class="col-12">
-                              <picture class="img-tentang">
-                                  <img alt="img-tentang" src="/asset/gambar3.png">
+                          <div class="col-12 text-align-center" style="display:flex;">
+                              <picture class="img-tentang mx-auto">
+                                  <img alt="img-tentang" src="/asset/gambar3.png" style="border-radius:10px;">
                                   <!-- <h1 style="font-size:30px; display:flex; justify-content: center;">Kudus Bisa !</h1> -->
                               </picture>
                               <div class="u-lazy__placeholder-2"></div>

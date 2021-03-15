@@ -72,7 +72,7 @@
   <div class="container">
       <div class="main">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
             <h1 style="font-family: 'Roboto', sans-serif; font-size:28px;">Berita Lainnya</h1>
             </div>
           </div>
@@ -80,12 +80,12 @@
             @foreach ($feed_post as $key => $data)
             @if($key < 4)
             <div class="py-3 col-md-4">
-              <div class="card" >
-                <img src="/images/{{ $data->thumbnail }}" class="card-img-top" alt="thumbnail">
-                <div class="card-body">
-                  <a href="/detail/post/{{$data->slug}}" style="font-weight:bold; color:#000;">{{ $data->title }}</a>
+
+                <img src="/images/{{ $data->thumbnail }}" class="card-img-top" alt="thumbnail" style="border-radius:6px;">
+                <div class="card-body pl-1">
+                  <a href="/detail/post/{{$data->slug}}" style="font-weight:bold; color:#000; padding-left:3px;">{{ $data->title }}</a>
                 </div>
-              </div>
+
             </div>
             @endif
             @endforeach

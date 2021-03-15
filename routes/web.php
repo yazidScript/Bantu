@@ -46,7 +46,7 @@ Route::get('/detail/post/{slug}', 'FrontController@detailpost');
   Route::get('/donatur/{id}/sendemail','AdminController@sendemail');
   Route::get('/pengajuan/send','AdminController@pengajuanemail');
   Route::post('/pengajuan/send','AdminController@pengajuansend')->name('send.pengajuan');
-  
+
 
 
   //POST Admin

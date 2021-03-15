@@ -36,7 +36,7 @@
            <h class="navbar-brand h1" style="color:#000; font-size: 25px; font-family: 'Roboto', sans-serif; font-weight:900px;">KUDUS BISA</h>
           </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" style="background-color:#e6e6e6ff;"></span>
+      <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav ml-auto" >
@@ -164,7 +164,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
 <script>
 @if(Session::has('suksess'))
     toastr.success("{{Session::get('suksess')}}","SUKSES")

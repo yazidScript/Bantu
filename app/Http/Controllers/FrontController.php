@@ -129,12 +129,8 @@ class FrontController extends Controller
       ]);
     }
 
-    return view('Home.bayar-check',['nama' => $v,'nomor' => $vv,'nominal' => $nmnl])->with(['success' => 'Donasi Berhasil Di Kirim']);;
+    return view('Home.bayar-check',['nama' => $v,'nomor' => $vv,'nominal' => $nmnl])->with(['success' => 'Donasi Berhasil Di Kirim']);
    }
-
-
-
-
 
 
    public function carabayar(Request $request)
@@ -163,7 +159,6 @@ class FrontController extends Controller
 
      return view('Home.show', compact('feed_post','post'));
    }
-
 
  public function ExportPDF()
  {

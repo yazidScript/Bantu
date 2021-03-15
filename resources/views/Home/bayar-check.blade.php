@@ -3,6 +3,13 @@
 @section('content')
 
 
+@if ($message = Session::get('success'))
+	  <div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">×</button>
+		  <strong>{{ $message }}</strong>
+	  </div>
+	@endif
+
 <div class="container" style="margin-top:10rem;margin-bottom:10rem;">
    <div class="row">
      <div class="pembayaran-check mx-auto">
