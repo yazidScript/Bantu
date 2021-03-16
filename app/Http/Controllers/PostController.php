@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Kategory;
 use App\Kecamatan;
 use App\Post;
@@ -105,9 +106,10 @@ class PostController extends Controller
         'penerima' => 'required',
         'content' => 'required'
      ]);
-
       $new_image = $request->new_image;
-      $old_image = $request->old_image;
+      $get_data = DB::table('posts')->where('id', $id)->first();
+      $get_old_img = $get_data->thumbnail;
+      $path_delete = public_path('/images');
       if(!isset($new_image)){
         DB::table('posts')->where('id',$id)->update([
           'title' => $request->title,
@@ -116,11 +118,12 @@ class PostController extends Controller
           'kecamatan' => $request->option,
           'kategori'  => $request->optionkat,
           'content' => $request->content,
-          'thumbnail' =>$old_image
+          'thumbnail' => $get_old_img
             ]);
       }else{
         $filename = time() . '.' . $request->file('new_image')->getClientOriginalExtension();
         $request->file('new_image')->move('images/', $filename);
+        File::delete($path_delete.'/'.$get_old_img);
         DB::table('posts')->where('id',$id)->update([
           'title' => $request->title,
           'slug' => $request->slug,

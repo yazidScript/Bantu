@@ -25,14 +25,16 @@
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th>Id</th>
-                    <th>Donasi id</th>
+                    <th>Id Donatur</th>
+                    <th>Id Donasi</th>
+                    <th>Foto KTP</th>
                     <th>Email</th>
                     <th>No Telephone</th>
                     <th>Nama Lengkap</th>
                     <th>metodebayar</th>
                     <th>Nominal</th>
                     <th>Status</th>
+                    <th>Waktu</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -42,13 +44,15 @@
                   <tr>
                      <td>{{$dot->id}}</td>
                      <td >{{$dot->post_id}}</a></td>
+                       <td><a data-fancybox="gallery" href="../images-donatur/{{ $dot->gambar_ktp }}"><img src="../images-donatur/{{ $dot->gambar_ktp }}"  width="60px" height="60px"></td>
                       <td>{{$dot->email}}</td>
                       <td>{{$dot->notlp}}</td>
                       <td>{{$dot->namalengkap}}</td>
                       <td>{{$dot->metodebayar}}</td>
                       <td>Rp.{{number_format ($dot->nominal)}}</td>
                       <td>{{$dot->status}}</td>
-                      <td></td>
+                      <td><span class="badge badge-pill badge-warning">{{\Carbon\Carbon::parse($dot->created_at)->diffForHumans() }}</span></td>
+
                     <td>
                       @if($dot->status == "Belum diterima")
                             <a href="/donatur/{{$dot->id}}/sendemail" class="btn btn-sm btn-info">Terima</a>
@@ -56,7 +60,6 @@
                       @endif
                     </td>
                     <td>  <a class="btn btn-sm btn-danger text-white delete" donatur-id="{{$dot->id}}">Delete</a></td>
-
                   </tr>
                   @endforeach
                 </tbody>

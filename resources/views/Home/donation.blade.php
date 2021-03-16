@@ -53,6 +53,13 @@
                        </div>
                        <span style="color:red; margin-left: 240px">{{ $errors->first('metodebayar') }}</span>
                    </div>
+                   <div class="form-group row">
+                       <label for="gambar_ktp" class="col-md-4 col-form-label text-md-right">Foto KTP</label>
+                       <div class="col-md-6">
+                       <input name="gambar_ktp" type="file" class="form-control" value="{{ old('gambar_ktp') }}" id="gambar_ktp" required>
+                       <span  style="color:red;">{{ $errors->first('gambar_ktp') }}</span>
+                     </div>
+                   </div>
                    <div class="text-center" >
                      <button class="btn btn-danger text-white" style="text-transform:inherit; width:200px;">Donasi</button>
 

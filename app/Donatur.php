@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Donatur extends Model
 {
   protected $table = 'donatur';
-  protected $fillable = ['id','post_id','nominal','email','notlp','nama','metodebayar','status','created_at'];
+  protected $fillable = ['id','post_id','nominal','email','notlp','nama','metodebayar','status','gambar_ktp','created_at'];
 
   public function donasi()
   {

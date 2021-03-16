@@ -54,9 +54,9 @@
                  <div class="form-group row">
                      <label for="thumbnail" class="col-md-4 col-form-label text-md-right">Thumbnail</label>
                      <div class="col-md-4">
-                       <input type="file" name="new_image" />
+                       <input type="file" id="new_image"name="new_image" />
                         <img class="img-thumbnail mt-4 " style="width= "100;""  src=" {{url('/images/'."$p->thumbnail")}}"/>
-                        <input type="hidden" name="old_image" value="{{ $p->thumbnail }}" />
+                        <input type="hidden" name="old_image" value="{{ $p->thumbnail }}" onchange="handleFiles(this.files)" />
                      </div>
                      <span style="color:red;">{{ $errors->first('thumbnail') }}</span>
                  </div>
@@ -76,6 +76,7 @@
 </div>
 @stop
 @section('footer')
+<script type="text/javascript" src="/public/js/preview-image.js"></script>
 <script>
   var options = {
     filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',

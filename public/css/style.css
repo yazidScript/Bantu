@@ -120,6 +120,10 @@ picture img{
   width: 250px;
   height: 350px;
 }
+.post-copy-link i:hover{
+  transform: scaleY(1);
+  color: #E40B0B;
+}
 /* RESPONSIVE */
 @media only screen and (max-width: 680px) {
   /* For mobile phones: */
@@ -200,8 +204,8 @@ picture img{
   .donasi-detail__sidebar .text-center{
     display: none
   }
-  .donasi-share-wa, .donasi-share-fb{
-
+  .donasi-share-wa, .post-copy-link{
+    
   }
   picture img{
      padding: 0;

@@ -12,6 +12,7 @@ use App\Post;
 use PDF;
 use Str;
 use DB,Hash;
+use Carbon\Carbon;
 
 class FrontController extends Controller
 {
@@ -69,8 +70,8 @@ class FrontController extends Controller
      'tanggal' => 'required',
      'alamat' => 'required'
  ]);
- $filename = time() . '.' . $request->file('gambar')->getClientOriginalExtension();
- $request->file('gambar')->move('images', $filename);
+ $filename = time() . '.' . $request->file('gambar_ktp')->getClientOriginalExtension();
+ $request->file('gambar_ktp')->move('images-pengajuan', $filename);
 
      Pengajuan::insert([
      'email' => $request->email,
@@ -78,7 +79,8 @@ class FrontController extends Controller
      'notlp'=>$request->notlp,
      'tanggal'=>$request->tanggal,
      'alamat' => $request->alamat,
-     'gambar' => $filename
+     'gambar_ktp' => $filename,
+     'created_at' => Carbon::now()->toDateTimeString()
  ]);
  return redirect('/tentang')->with(['success' => 'Pengajuan Berhasil DiKirim']);
 }
@@ -95,8 +97,11 @@ class FrontController extends Controller
        'email' => 'required|email',
        'namalengkap' => 'required',
        'notlp' =>'required|min:12|max:13',
-       'nominal' => 'required'
+       'nominal' => 'required',
+       'gambar_ktp' => 'required'
    ]);
+   $filename = time() . '.' . $request->file('gambar_ktp')->getClientOriginalExtension();
+   $request->file('gambar_ktp')->move('images-donatur', $filename);
    Donatur::insert([
        'post_id' =>$request->post_id,
        'email' => $request->email,
@@ -104,7 +109,9 @@ class FrontController extends Controller
        'notlp'=>$request->notlp,
        'nominal' => $request->nominal,
        'metodebayar' => $request->optionbayar,
-       'status' => 'Belum diterima'
+       'status' => 'Belum diterima',
+       'gambar_ktp' => $filename,
+       'created_at' => Carbon::now()->toDateTimeString()
    ]);
    $jumlah = DB::table('posts')->where('id',$request->post_id)->first();
    $sum_data = $jumlah->jumlah_sekarang + $request->nominal;

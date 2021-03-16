@@ -25,12 +25,13 @@
                 <thead>
                   <tr>
                     <th>Id</th>
-                    <th>Gambar Bukti</th>
+                    <th>Foto KTP</th>
                     <th>Nama Pemohon</th>
                     <th>Email</th>
                     <th>No Telephone</th>
                     <th>Tanggal Bencana</th>
                     <th>Alamat Bencana</th>
+                    <th>Waktu</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -39,14 +40,14 @@
                   @foreach($pengajuan as $data)
                   <tr>
                       <td>{{$data->id}}</td>
-                      <td><a data-fancybox="gallery" href="../images/{{ $data->gambar }}"><img src="../images/{{ $data->gambar }}" class="ml-4" width="60px" height="60px"></td>
-                      <td >{{$data->namalengkap}}</a></td>
+                      <td><a data-fancybox="gallery" href="../images-pengajuan/{{ $data->gambar_ktp }}"><img src="../images-pengajuan/{{ $data->gambar_ktp }}" width="60px" height="60px"></td>
+                      <td>{{$data->namalengkap}}</td>
                       <td>{{$data->email}}</td>
                       <td>{{$data->notlp}}</td>
                       <td>{{$data->tanggal}}</td>
                       <td>{{$data->alamat}}</td>
-                      <td></td>
-                    </td>
+                      <td><span class="badge badge-pill badge-warning">{{ \Carbon\Carbon::parse($data->created_at)->diffForHumans() }}</span></td>
+                    
                     <td>
                       <a href="/pengajuan/send" class="btn btn-sm btn-info">Feedback</a>
                       <a class="btn btn-sm btn-danger text-white delete" pengajuan-id="{{$data->id}}">Delete</a>

@@ -83,9 +83,9 @@
                  <span  style="color:red;";>{{ $errors->first('alamat') }}</span>
               </div>
               <div class="form-group">
-                  <label for="gambar">Gambar Bukti</label>
-                  <input name="gambar" type="file" class="form-control" value="{{ old('gambar') }}" id="gambar" required>
-                  <span  style="color:red;">{{ $errors->first('gambar') }}</span>
+                  <label for="gambar_ktp">Foto KTP</label>
+                  <input name="gambar_ktp" type="file" class="form-control" value="{{ old('gambar_ktp') }}" id="gambar_ktp" required>
+                  <span  style="color:red;">{{ $errors->first('gambar_ktp') }}</span>
               </div>
               <button type="submit" class="btn text-white" style="background-color:#E40B0B; border-radius: 6rem;">Kirim</button>
             </form>

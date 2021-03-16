@@ -9,18 +9,13 @@
               <div class="row pt-4 u-position u-position--sticky-top u-position--sticky-top--sec-top">
                   <div class="col-md-6 col-lg-4">
                       <div class="donasi-detail__sidebar hide-mb row align-items-center justify-content-center">
-                          <div class="col-12 mb-2 text-center">Share Berita</div>
+                          <div class="col-12 mb-2 text-center">Share</div>
                           <a class="donasi-share-wa" href="https://api.whatsapp.com/send?text=http://127.0.0.1:8000/detail/post/{{$post->slug }}">
                             <div class="col-12 mb-3">
                               <img lass="icon wa" src="/Logo/wa.svg" data-was-processed="true"/>
                             </div>
                           </a>
-                          <a class="donasi-share-fb" href="https://api.facebook.com/" target="_blank">
-
-                            <div class="col-12 mb-3">
-                              <img class="icon fb" src="/Logo/fb.svg" data-was-processed="true"/>
-                            </div>
-                          </a>
+                          <div class="col-12 post-copy-link"><i class="fas fa-share-alt fa-2x" id="share"></i></div>
                       </div>
                   </div>
               </div>
@@ -95,6 +90,7 @@
 </div>
 @stop
 @section ('footer')
+
  <script>
    $('.collapse').collapse()
  </script>
