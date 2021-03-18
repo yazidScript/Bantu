@@ -15,7 +15,7 @@
                               <img lass="icon wa" src="/Logo/wa.svg" data-was-processed="true"/>
                             </div>
                           </a>
-                          <div class="col-12 post-copy-link"><i class="fas fa-share-alt fa-2x" id="share"></i></div>
+                          <!-- <div class="col-12 post-copy-link"><i class="fas fa-share-alt fa-2x" id="share"></i></div> -->
                       </div>
                   </div>
               </div>

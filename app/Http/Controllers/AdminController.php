@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Exports\DonaturExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\File;
 use App\Donatur;
 use App\Pengajuan;
 use App\Post;
@@ -69,8 +70,14 @@ class AdminController extends Controller
      if(Self::check_logged()){
        return redirect()->back();
      }
+     $get_data_donatur = DB::table('donatur')->where('id', $id)->first();
+     $get_foto_donatur = $get_data_donatur->gambar_ktp;
 
-     Donatur::where('id',$id)->delete();
+     $path_delete = public_path('/images-donatur');
+     if ($get_data_donatur) {
+       File::delete($path_delete.'/'.$get_foto_donatur);
+       Donatur::where('id',$id)->delete();
+     }
      return redirect('/dashboard/donatur')->with('sukses','Data Donatur Berhasil Dihapus');
    }
 
@@ -89,8 +96,15 @@ class AdminController extends Controller
      if(Self::check_logged()){
        return redirect()->back();
      }
+     $get_data = DB::table('pengajuan')->where('id', $id)->first();
+     $get_foto = $get_data->gambar_ktp;
 
-     Pengajuan::where('id',$id)->delete();
+     $path_delete = public_path('/images-pengajuan');
+     if ($get_data) {
+       File::delete($path_delete.'/'.$get_foto);
+       Pengajuan::where('id',$id)->delete();
+     }
+
      return redirect('/dashboard/pengajuan')->with('sukses','Data Pengajuan Berhasil Dihapus');
    }
 

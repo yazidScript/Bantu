@@ -47,7 +47,7 @@
             <a class="nav-link"href="/berita"><span>Berita</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="/tentang"><span>Tentang</span></a>
+            <a class="nav-link"  href="/tentang"><span>Tentang kami</span></a>
           </li>
         </ul>
       </div>
@@ -82,10 +82,10 @@
             <a href="/">Beranda</a>
           </p>
           <p>
-            <a href="/">Donasi</a>
+            <a href="/berita">Berita</a>
           </p>
           <p>
-            <a href="/">Tentang</a>
+            <a href="/tentang">Tentang Kami</a>
           </p>
         </div>
         <!-- Grid column -->

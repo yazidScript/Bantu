@@ -155,7 +155,6 @@ class FrontController extends Controller
    {
      $data_post = Post::get();
      $feed_post = [];
-
      $post = Post::where('slug',  $slug)->first();
 
      foreach ($data_post as $key => $item) {

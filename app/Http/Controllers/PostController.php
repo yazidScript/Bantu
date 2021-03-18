@@ -141,17 +141,13 @@ class PostController extends Controller
      if(Self::check_logged()){
        return redirect()->back();
      }
-
-     Post::where('slug',$slug)->delete();
+     $get_data = DB::table('posts')->where('slug', $slug)->first();
+     $get_old_img = $get_data->thumbnail;
+     $path_delete = public_path('/images');
+     if ($get_data) {
+       File::delete($path_delete.'/'.$get_old_img);
+      Post::where('slug',$slug)->delete();
+     }
      return redirect('/dashboard/post')->with('sukses','Data Post Berhasil Dihapus');
    }
-   // public function srcThumbnail($imagename){
-   //      $path = storage_path('product_images/'.$imagename);
-   //      if(!File::exists($path)) abort(404);
-   //      $file = File::get($path);
-   //      $type = File::mimeType($path);
-   //      $response = Response::make($file,200);
-   //      $response->header("Content-Type",$type);
-   //      return $response;
-   //    }
 }
